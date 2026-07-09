@@ -54,15 +54,16 @@ Les postes et leurs missions/rôles proviennent du document officiel
 | Président & Vice-Président              | Bureau        | Ouattara Nassir (Président), Tapé Jo (Vice-Président) |
 | Secrétaire Général                      | Bureau        | Droh Michael |
 | Trésorier Général                       | Bureau        | Ateby Yannick, Koné Adams |
-| Resp. Production Digitale & Communication | Bureau      | — |
+| Resp. Production Digitale & Communication | Bureau      | Dagbo Kady |
 | Responsable de la Bonne Gouvernance     | Bureau        | Koffi Mohaye Lyvan Ange |
-| Commission Mentorat & Carrière          | Commission    | Erica Ama, Koné Isaac, Adja Pierre Samuel |
+| Commission Mentorat & Carrière          | Commission    | Erica Ama, Koné Isaac, Adja Pierre Samuel, Tano Aimée Sylvestre |
 | Commission Événements & Vie Associative | Commission    | Douati Dylane |
 
-> **À noter :** la présentation d'**Ouattara Nassir** a été **rédigée à la demande
-> du Bureau** (les autres lettres sont reproduites telles que leurs auteurs les ont
-> écrites). Le poste **« Responsable de la Bonne Gouvernance »** ne figure pas dans
-> l'organigramme initial : il a été ajouté car un membre s'est présenté pour ce rôle.
+> **À noter :** les présentations d'**Ouattara Nassir** (Président) et de **Dagbo Kady**
+> (Communication) ont été **rédigées à leur demande** ; toutes les autres lettres sont
+> reproduites telles que leurs auteurs les ont écrites. Le poste **« Responsable de la
+> Bonne Gouvernance »** ne figure pas dans l'organigramme initial : il a été ajouté car
+> un membre s'est présenté pour ce rôle.
 
 ## Ajouter ou modifier une présentation
 
