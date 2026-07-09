@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A-LEX — Candidatures & Présentations des membres</title>
-<meta name="description" content="Espace de présentation des candidatures au Bureau Exécutif et aux Commissions de l'association A-LEX. Découvrez les postes, leurs missions et les pitchs des candidats.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>A-LEX — Présentations des candidats</title>
+<meta name="description" content="Les membres d'A-LEX qui se sont désignés pour un poste prennent la parole : découvrez leurs présentations et leurs lettres de motivation dans leur intégralité.">
 <style>
 /* ============================================================
-   A-LEX — Charte graphique
-   Navy #0D2841 · Or #F1BA27 · Crème #F7F2E4 · Serif Playfair
+   A-LEX — Présentations des candidats
+   Charte : Navy #0D2841 · Or #F1BA27 · Crème #F7F2E4
+   Police : Helvetica
    ============================================================ */
 :root{
   --navy:#0D2841;
   --navy-2:#112F4D;
   --navy-3:#16395C;
-  --navy-4:#1A4166;
   --gold:#F1BA27;
   --gold-2:#f6c94a;
   --gold-deep:#cf9d16;
@@ -32,342 +29,194 @@
   --radius-sm:12px;
   --shadow-navy:0 24px 60px -28px rgba(0,0,0,.65);
   --shadow-cream:0 22px 50px -30px rgba(13,40,65,.45);
-  --maxw:1180px;
-  --serif:"Playfair Display", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --maxw:1120px;
+  --font:"Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:var(--sans);
+  font-family:var(--font);
   color:var(--ink);
   background:var(--cream);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
-h1,h2,h3,h4{font-family:var(--serif);font-weight:700;margin:0;line-height:1.12}
+h1,h2,h3,h4{font-family:var(--font);font-weight:700;margin:0;line-height:1.14;letter-spacing:-.015em}
 p{margin:0}
 a{color:inherit}
 img{max-width:100%;display:block}
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
-
-/* eyebrow */
-.eyebrow{
-  font-family:var(--sans);
-  font-weight:600;
-  font-size:.72rem;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:var(--gold-deep);
-  margin:0 0 14px;
-}
+.eyebrow{font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 14px}
 .on-navy .eyebrow{color:var(--gold)}
 
-/* ============================================================
-   HEADER
-   ============================================================ */
+/* ============ HEADER (logo only — pas de menu) ============ */
 .site-header{
   position:sticky;top:0;z-index:60;
-  background:rgba(13,40,65,.86);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(241,186,39,.16);
-  transition:background .3s, box-shadow .3s;
+  background:rgba(13,40,65,.9);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(241,186,39,.16);transition:box-shadow .3s;
 }
 .site-header.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{height:40px;width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.brand img{height:38px;width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
 .brand .bt{display:flex;flex-direction:column;line-height:1}
-.brand .bt b{font-family:var(--serif);color:#fff;font-size:1.15rem;letter-spacing:.16em;font-weight:800}
-.brand .bt span{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:4px}
-.nav-links{display:flex;gap:6px;align-items:center}
-.nav-links a{
-  text-decoration:none;color:var(--white-72);font-size:.86rem;font-weight:500;
-  padding:9px 14px;border-radius:999px;transition:.2s;letter-spacing:.01em;
-}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nav-cta{
-  background:linear-gradient(180deg,var(--gold-2),var(--gold));
-  color:var(--navy)!important;font-weight:700!important;
-  box-shadow:0 8px 22px -10px rgba(241,186,39,.7);
-}
-.nav-cta:hover{background:linear-gradient(180deg,#ffd85e,var(--gold-2))!important}
-.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;border-radius:2px;transition:.3s}
+.brand .bt b{color:#fff;font-size:1.05rem;letter-spacing:.14em;font-weight:700}
+.brand .bt span{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.header-tag{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white-55);font-weight:600}
 
-/* ============================================================
-   HERO
-   ============================================================ */
+/* ============ HERO ============ */
 .hero{
-  position:relative;
+  position:relative;color:#fff;overflow:hidden;
   background:
     radial-gradient(120% 80% at 85% -10%, #16395C 0%, rgba(22,57,92,0) 55%),
     radial-gradient(90% 70% at 10% 110%, #10304f 0%, rgba(16,48,79,0) 60%),
     var(--navy);
-  color:#fff;overflow:hidden;
-  padding:clamp(70px,11vw,130px) 0 clamp(60px,9vw,110px);
+  padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px);
 }
 .hero .wrap{position:relative;z-index:2;text-align:center}
-/* decorative soft circles from the deck */
-.blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.028);z-index:1;pointer-events:none}
+.blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.03);z-index:1;pointer-events:none}
 .blob.b1{width:560px;height:560px;top:-260px;left:-180px}
 .blob.b2{width:680px;height:680px;bottom:-380px;right:-220px;background:rgba(255,255,255,.035)}
-.hero-crest{width:96px;margin:0 auto 26px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.5));animation:floaty 6s ease-in-out infinite}
+.hero-crest{width:92px;margin:0 auto 26px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.5));animation:floaty 6s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .hero .kicker{
-  display:inline-block;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);border:1px solid rgba(241,186,39,.4);
-  padding:8px 18px;border-radius:999px;margin-bottom:26px;font-weight:600;
+  display:inline-block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(241,186,39,.4);padding:8px 18px;border-radius:999px;margin-bottom:26px;font-weight:600;
   background:rgba(241,186,39,.06);
 }
-.hero h1{
-  font-size:clamp(2.5rem,6.6vw,4.5rem);font-weight:800;letter-spacing:-.01em;
-  line-height:1.05;margin-bottom:8px;
-}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:700;line-height:1.06;margin-bottom:6px}
 .hero h1 .gold{color:var(--gold)}
-.hero .lead{
-  max-width:640px;margin:22px auto 0;font-size:clamp(1rem,2vw,1.18rem);
-  color:var(--white-72);line-height:1.65;font-weight:300;
-}
-.hero-rule{width:132px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:34px auto 30px;border-radius:3px}
-.devise{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,2.2vw,1.35rem);color:var(--gold-2);font-weight:500}
-.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;cursor:pointer;text-decoration:none;
-  font-family:var(--sans);font-weight:600;font-size:.95rem;border-radius:999px;
-  padding:14px 28px;border:1px solid transparent;transition:transform .18s, box-shadow .2s, background .2s;
-}
-.btn:active{transform:translateY(1px)}
-.btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--navy);box-shadow:0 14px 30px -12px rgba(241,186,39,.6)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 38px -12px rgba(241,186,39,.75)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero .lead{max-width:660px;margin:22px auto 0;font-size:clamp(1rem,2vw,1.16rem);color:var(--white-72);line-height:1.65;font-weight:400}
+.hero-rule{width:132px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:34px auto 28px;border-radius:3px}
+.devise{font-style:italic;font-size:clamp(1rem,2.2vw,1.28rem);color:var(--gold-2);font-weight:500}
+.stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:640px;margin:48px auto 0}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(241,186,39,.16);border-radius:var(--radius-sm);padding:22px 14px;text-align:center}
+.stat .num{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--gold);font-weight:700;line-height:1}
+.stat .lbl{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-55);margin-top:9px}
 
-/* stats strip */
-.stats{
-  position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-  max-width:860px;margin:56px auto 0;
-}
-.stat{
-  background:rgba(255,255,255,.04);border:1px solid rgba(241,186,39,.16);
-  border-radius:var(--radius-sm);padding:22px 14px;text-align:center;
-}
-.stat .num{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.5rem);color:var(--gold);font-weight:800;line-height:1}
-.stat .lbl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-55);margin-top:9px}
-
-/* ============================================================
-   SECTION SHELLS
-   ============================================================ */
-section{position:relative}
-.band-cream{background:var(--cream);padding:clamp(60px,9vw,110px) 0}
+/* ============ SECTION SHELLS ============ */
+.band-cream{background:var(--cream);padding:clamp(56px,8vw,100px) 0}
 .band-cream.alt{background:var(--cream-2)}
-.band-navy{background:var(--navy);color:#fff;padding:clamp(60px,9vw,110px) 0;position:relative;overflow:hidden}
-.section-head{max-width:720px;margin-bottom:clamp(34px,5vw,56px)}
+.band-navy{background:var(--navy);color:#fff;padding:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden}
+.section-head{max-width:760px;margin-bottom:clamp(30px,5vw,52px)}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.section-head h2{font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.01em}
+.section-head h2{font-size:clamp(1.8rem,4.2vw,2.7rem)}
 .on-navy .section-head h2{color:#fff}
-.section-head p{margin-top:18px;font-size:1.05rem;line-height:1.7;color:rgba(13,40,65,.72)}
+.section-head p{margin-top:16px;font-size:1.04rem;line-height:1.7;color:rgba(13,40,65,.72)}
 .on-navy .section-head p{color:var(--white-72)}
 
-/* ============================================================
-   COMMENT CANDIDATER — steps
-   ============================================================ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.step{
-  background:var(--navy-2);border:1px solid var(--line-navy);border-radius:var(--radius);
-  padding:30px 26px;position:relative;overflow:hidden;transition:transform .25s, box-shadow .25s;
-}
-.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-navy)}
-.step .n{
-  font-family:var(--serif);font-size:2.6rem;font-weight:800;color:rgba(241,186,39,.28);
-  line-height:1;margin-bottom:10px;
-}
-.step h3{color:#fff;font-size:1.2rem;margin-bottom:10px}
-.step p{color:var(--white-72);font-size:.95rem;line-height:1.6}
-.step .badge-req{
-  display:inline-block;margin-top:14px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold);background:rgba(241,186,39,.1);border:1px solid rgba(241,186,39,.28);
-  padding:5px 12px;border-radius:999px;font-weight:600;
-}
-.notice{
-  margin-top:36px;display:flex;gap:16px;align-items:flex-start;
-  background:rgba(241,186,39,.07);border:1px solid rgba(241,186,39,.22);
-  border-radius:var(--radius);padding:22px 24px;
-}
-.notice svg{flex:0 0 auto;margin-top:2px}
-.notice p{color:var(--white-72);font-size:.96rem;line-height:1.65}
-.notice b{color:#fff}
-
-/* ============================================================
-   FILTER / SEARCH BAR
-   ============================================================ */
-.toolbar{
-  position:sticky;top:70px;z-index:40;
-  background:rgba(247,242,228,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-top:1px solid var(--line-cream);border-bottom:1px solid var(--line-cream);
-  padding:16px 0;
-}
-.toolbar-inner{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between}
-.chips{display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{
-  white-space:nowrap;cursor:pointer;border:1px solid var(--line-cream);background:#fff;
-  color:var(--ink);font-family:var(--sans);font-size:.84rem;font-weight:500;
-  padding:9px 16px;border-radius:999px;transition:.2s;display:inline-flex;align-items:center;gap:7px;
-}
-.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.7}
-.chip:hover{border-color:var(--gold);color:var(--gold-deep)}
-.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.chip.active .dot{background:var(--gold);opacity:1}
-.search{position:relative;flex:0 1 260px;min-width:200px}
-.search input{
-  width:100%;border:1px solid var(--line-cream);background:#fff;border-radius:999px;
-  padding:11px 16px 11px 42px;font-family:var(--sans);font-size:.9rem;color:var(--ink);outline:none;transition:.2s;
-}
-.search input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(241,186,39,.15)}
-.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.5}
-.count-line{font-size:.85rem;color:rgba(13,40,65,.6);margin-top:14px}
-.count-line b{color:var(--gold-deep)}
-
-/* ============================================================
-   POST SECTIONS
-   ============================================================ */
-.post{padding-top:clamp(48px,7vw,84px);scroll-margin-top:150px}
+/* ============ POST SECTIONS ============ */
+.post{padding-top:clamp(46px,7vw,80px);scroll-margin-top:90px}
 .post + .post{border-top:1px solid var(--line-cream)}
-.post-head{display:flex;gap:22px;align-items:flex-start;margin-bottom:30px}
+.post-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:24px}
 .post-badge{
-  flex:0 0 auto;width:64px;height:64px;border-radius:50%;
+  flex:0 0 auto;width:60px;height:60px;border-radius:50%;
   background:linear-gradient(180deg,var(--gold-2),var(--gold));
   display:grid;place-items:center;box-shadow:0 12px 26px -12px rgba(241,186,39,.7);
 }
-.post-badge svg{width:30px;height:30px}
+.post-badge svg{width:28px;height:28px}
 .post-head .pt{flex:1;min-width:0}
-.post-kind{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
-.post-head h3{font-size:clamp(1.5rem,3.4vw,2.15rem);margin:6px 0 0;color:var(--ink)}
+.post-kind{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.post-head h3{font-size:clamp(1.45rem,3.2vw,2rem);margin:6px 0 0;color:var(--ink)}
+.count-pill{
+  display:inline-block;margin-top:12px;font-size:.74rem;font-weight:600;color:var(--gold-deep);
+  background:rgba(241,186,39,.12);border:1px solid rgba(241,186,39,.3);padding:5px 13px;border-radius:999px;
+}
 .mission{
   background:#fff;border:1px solid var(--line-cream);border-left:4px solid var(--gold);
-  border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:26px;
-  font-size:1.02rem;line-height:1.65;color:rgba(13,40,65,.82);box-shadow:var(--shadow-cream);
+  border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:22px;
+  font-size:1rem;line-height:1.6;color:rgba(13,40,65,.82);box-shadow:var(--shadow-cream);
 }
-.mission b{color:var(--ink);font-weight:600}
-.roles{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:10px 26px;margin:0 0 34px;padding:0;list-style:none;
-}
-.roles li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;line-height:1.5;color:rgba(13,40,65,.8)}
+.mission b{color:var(--ink);font-weight:700}
+.roles-title{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(13,40,65,.5);font-weight:600;margin:0 0 12px}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 26px;margin:0 0 34px;padding:0;list-style:none}
+.roles li{display:flex;gap:11px;align-items:flex-start;font-size:.92rem;line-height:1.5;color:rgba(13,40,65,.78)}
 .roles li svg{flex:0 0 auto;margin-top:3px}
-.roles-title{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,40,65,.5);font-weight:600;margin:0 0 14px}
 
-/* candidate grid */
-.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
-.cand{
+/* ============ LETTERS (le cœur de la page) ============ */
+.letters{display:flex;flex-direction:column;gap:22px;max-width:840px}
+.letter{
   position:relative;background:var(--navy);color:#fff;border-radius:var(--radius);
-  padding:28px 26px 24px;border:1px solid rgba(241,186,39,.14);
+  padding:clamp(24px,4vw,36px);border:1px solid rgba(241,186,39,.16);
   box-shadow:var(--shadow-cream);overflow:hidden;transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, border-color .28s;
 }
-.cand::before{
-  content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0%,rgba(241,186,39,.14),transparent 55%);
-  opacity:0;transition:opacity .3s;pointer-events:none;
-}
-.cand:hover{transform:translateY(-7px);box-shadow:0 34px 60px -28px rgba(13,40,65,.7);border-color:rgba(241,186,39,.4)}
-.cand:hover::before{opacity:1}
-.cand-top{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+.letter::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0%,rgba(241,186,39,.12),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
+.letter:hover{transform:translateY(-4px);box-shadow:0 34px 60px -28px rgba(13,40,65,.7);border-color:rgba(241,186,39,.4)}
+.letter:hover::before{opacity:1}
+.letter-head{display:flex;gap:18px;align-items:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}
 .avatar{
-  flex:0 0 auto;width:60px;height:60px;border-radius:50%;
-  display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:1.35rem;color:var(--navy);
+  flex:0 0 auto;width:62px;height:62px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;font-size:1.3rem;color:var(--navy);
   background:linear-gradient(145deg,var(--gold-2),var(--gold-deep));
-  box-shadow:0 0 0 3px rgba(241,186,39,.22), 0 8px 18px -8px rgba(0,0,0,.6);
+  box-shadow:0 0 0 3px rgba(241,186,39,.22), 0 8px 18px -8px rgba(0,0,0,.6);letter-spacing:.02em;
 }
-.cand-id{min-width:0}
-.cand-id .name{font-family:var(--serif);font-size:1.22rem;font-weight:700;color:#fff;line-height:1.2}
-.cand-id .promo{font-size:.8rem;color:var(--gold-2);margin-top:4px;font-weight:500}
-.cand-form{
-  display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:var(--white-72);
-  padding:11px 0 14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09);margin-bottom:16px;
-}
-.cand-form svg{flex:0 0 auto;margin-top:1px;opacity:.8}
-.pitch{position:relative;font-size:.96rem;line-height:1.66;color:rgba(255,255,255,.86);font-family:var(--serif);font-style:italic}
-.pitch .q{font-family:var(--serif);font-size:2.4rem;color:rgba(241,186,39,.5);line-height:0;position:relative;top:12px;margin-right:2px}
-.cand-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}
-.tag{
-  font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--gold);
-  background:rgba(241,186,39,.1);border:1px solid rgba(241,186,39,.28);padding:5px 12px;border-radius:999px;
-}
-.tag.example{color:#8fb7d6;background:rgba(143,183,214,.1);border-color:rgba(143,183,214,.3)}
-.ribbon-ex{
-  position:absolute;top:14px;right:-34px;transform:rotate(45deg);
-  background:rgba(143,183,214,.9);color:var(--navy);font-size:.62rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;padding:5px 40px;box-shadow:0 4px 10px rgba(0,0,0,.3);
-}
+.letter-id{min-width:0;flex:1}
+.letter-id .name{font-size:1.3rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.01em}
+.letter-id .role{display:inline-block;margin-top:8px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);background:rgba(241,186,39,.1);border:1px solid rgba(241,186,39,.3);padding:4px 11px;border-radius:999px}
+.letter-form{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--gold-2);margin-top:10px;font-weight:500}
+.letter-form svg{flex:0 0 auto;margin-top:2px;opacity:.85}
+.letter-body{border-left:3px solid rgba(241,186,39,.3);padding-left:clamp(16px,3vw,22px)}
+.letter-body p{color:rgba(255,255,255,.9);line-height:1.78;font-size:1rem;margin-bottom:1.05em}
+.letter-body p:last-child{margin-bottom:0}
+.letter-body .priorities{font-weight:700;color:#fff;margin-bottom:.5em}
+.letter-body ul{margin:0 0 1.05em;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.letter-body ul li{display:flex;gap:12px;align-items:flex-start;color:rgba(255,255,255,.9);line-height:1.6;font-size:1rem}
+.letter-body ul li svg{flex:0 0 auto;margin-top:4px}
+.letter-sign{margin-top:24px;text-align:right}
+.letter-sign .by{font-weight:700;font-size:1.05rem;color:var(--gold);letter-spacing:.02em}
+.letter-sign .role-mini{display:block;font-size:.78rem;color:var(--white-55);margin-top:3px}
+.letter-note{margin-top:16px;font-size:.78rem;font-style:italic;color:var(--white-55);border-top:1px dashed rgba(255,255,255,.14);padding-top:14px}
 
-/* empty state */
+/* empty state (poste sans présentation) — neutre, pas d'appel à candidature */
 .empty{
-  grid-column:1/-1;text-align:center;padding:46px 24px;border:1.5px dashed var(--line-cream);
-  border-radius:var(--radius);background:#fff;
+  max-width:840px;text-align:center;padding:40px 24px;border:1.5px dashed var(--line-cream);
+  border-radius:var(--radius);background:#fff;color:rgba(13,40,65,.6);
 }
-.empty .ic{width:56px;height:56px;border-radius:50%;background:rgba(241,186,39,.12);display:grid;place-items:center;margin:0 auto 16px}
-.empty h4{font-size:1.15rem;color:var(--ink);margin-bottom:8px}
-.empty p{color:rgba(13,40,65,.6);font-size:.94rem;max-width:420px;margin:0 auto 18px;line-height:1.6}
+.empty .ic{width:52px;height:52px;border-radius:50%;background:rgba(241,186,39,.12);display:grid;place-items:center;margin:0 auto 14px}
+.empty h4{font-size:1.1rem;color:var(--ink);margin-bottom:8px}
+.empty p{font-size:.94rem;max-width:420px;margin:0 auto;line-height:1.6}
 
-/* ============================================================
-   CLOSING CTA
-   ============================================================ */
+/* ============ CLOSING ============ */
 .closing{text-align:center;position:relative;z-index:2}
-.closing .hero-crest{width:78px}
-.closing h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--gold);margin-bottom:0}
-.closing p{max-width:560px;margin:20px auto 0;color:var(--white-72);font-size:1.08rem;line-height:1.7;font-weight:300}
+.closing .hero-crest{width:76px}
+.closing h2{font-size:clamp(1.9rem,5vw,3rem);color:var(--gold);margin-bottom:0}
+.closing p{max-width:560px;margin:20px auto 0;color:var(--white-72);font-size:1.06rem;line-height:1.7}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1px solid rgba(241,186,39,.12)}
+/* ============ FOOTER ============ */
+footer{background:#0a2036;color:var(--white-55);padding:42px 0 28px;border-top:1px solid rgba(241,186,39,.12)}
 .foot-inner{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
 .foot-brand{display:flex;align-items:center;gap:12px}
-.foot-brand img{height:38px}
-.foot-brand b{font-family:var(--serif);color:#fff;letter-spacing:.14em;font-size:1.05rem}
+.foot-brand img{height:36px}
+.foot-brand b{color:#fff;letter-spacing:.12em;font-size:1.02rem}
 .foot-brand span{display:block;font-size:.72rem;color:var(--white-55);margin-top:3px}
-.foot-devise{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-size:.95rem}
-.foot-bottom{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);font-size:.8rem;text-align:center;color:var(--white-55)}
+.foot-devise{font-style:italic;color:var(--gold-2);font-size:.92rem}
+.foot-bottom{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);font-size:.78rem;text-align:center;color:var(--white-55)}
 
 /* back to top */
 .totop{
-  position:fixed;bottom:26px;right:26px;z-index:70;width:48px;height:48px;border-radius:50%;
+  position:fixed;bottom:24px;right:24px;z-index:70;width:48px;height:48px;border-radius:50%;
   background:linear-gradient(180deg,var(--gold-2),var(--gold));border:0;cursor:pointer;
   display:grid;place-items:center;box-shadow:0 12px 26px -10px rgba(241,186,39,.7);
   opacity:0;transform:translateY(16px) scale(.8);pointer-events:none;transition:.3s;
 }
 .totop.show{opacity:1;transform:none;pointer-events:auto}
 
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width:920px){
-  .nav-links{
-    position:fixed;top:70px;left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;
-    background:rgba(13,40,65,.98);padding:16px 20px 24px;border-bottom:1px solid rgba(241,186,39,.16);
-    transform:translateY(-140%);transition:transform .35s;box-shadow:0 20px 40px -20px rgba(0,0,0,.7);
-  }
-  .nav-links.open{transform:none}
-  .nav-links a{padding:13px 16px;font-size:.95rem}
-  .burger{display:block}
-  .steps{grid-template-columns:1fr}
+/* ============ RESPONSIVE ============ */
+@media (max-width:760px){
   .roles{grid-template-columns:1fr}
+  .header-tag{display:none}
 }
-@media (max-width:640px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .post-head{gap:16px}
-  .post-badge{width:54px;height:54px}
-  .post-badge svg{width:26px;height:26px}
-  .cands{grid-template-columns:1fr}
-  .toolbar{top:70px}
-  .toolbar-inner{gap:12px}
-  .search{flex:1 1 100%;order:-1}
+@media (max-width:520px){
+  .letter-head{gap:14px}
+  .avatar{width:54px;height:54px;font-size:1.15rem}
+  .letter-id .name{font-size:1.15rem}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -378,20 +227,14 @@ footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ HEADER (logo seul, aucun menu) ============ -->
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a href="#top" class="brand">
       <img src="assets/logo.png" alt="Logo A-LEX">
-      <span class="bt"><b>A-LEX</b><span>Candidatures</span></span>
+      <span class="bt"><b>A-LEX</b><span>Présentations</span></span>
     </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#candidater">Comment candidater</a>
-      <a href="#bureau">Bureau Exécutif</a>
-      <a href="#commissions">Commissions</a>
-      <a href="#candidater" class="nav-cta">Proposer ma candidature</a>
-    </nav>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <span class="header-tag">Les candidats prennent la parole</span>
   </div>
 </header>
 
@@ -401,88 +244,31 @@ footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1
   <div class="wrap">
     <img class="hero-crest" src="assets/logo.png" alt="Crest A-LEX">
     <span class="kicker">Bureau Exécutif &amp; Commissions</span>
-    <h1>Présentez votre <span class="gold">candidature</span></h1>
-    <p class="lead">L'espace où les membres d'A-LEX exposent leurs motivations, leur formation et leur vision — poste par poste — pour bâtir ensemble un bureau à la hauteur de notre excellence.</p>
+    <h1>Les candidats <span class="gold">prennent la parole</span></h1>
+    <p class="lead">Voici les membres qui se sont désignés pour un poste au sein d'A-LEX. Retrouvez, poste par poste, leur présentation et leur lettre de motivation — dans leurs propres mots, sans rien omettre.</p>
     <div class="hero-rule"></div>
     <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
-    <div class="hero-actions">
-      <a href="#candidater" class="btn btn-gold">Proposer ma candidature
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a href="#postes" class="btn btn-ghost">Découvrir les postes</a>
-    </div>
-
     <div class="stats" id="stats">
-      <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Postes ouverts</div></div>
-      <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Bureau exécutif</div></div>
-      <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">Commissions</div></div>
+      <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">Présentations</div></div>
+      <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">Postes concernés</div></div>
       <div class="stat"><div class="num" data-count="5">0</div><div class="lbl">Valeurs A-LEX</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ COMMENT CANDIDATER ============ -->
-<section class="band-navy on-navy" id="candidater">
-  <span class="blob b2" style="top:-300px;left:-200px;right:auto"></span>
-  <div class="wrap" style="position:relative;z-index:2">
-    <div class="section-head center reveal">
-      <p class="eyebrow">Avant le lancement du formulaire</p>
-      <h2>Comment proposer sa candidature</h2>
-      <p>Tous ceux qui veulent se proposer à un poste sont invités à écrire au Bureau. Préparez un pitch clair de vos motivations, sans oublier votre formation.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="n">01</div>
-        <h3>Choisissez votre poste</h3>
-        <p>Parcourez les rôles et missions du Bureau Exécutif et des Commissions, puis identifiez celui qui correspond à vos forces.</p>
-      </div>
-      <div class="step reveal">
-        <div class="n">02</div>
-        <h3>Rédigez votre pitch</h3>
-        <p>Quelques lignes suffisent : exposez vos motivations et ce que vous apporterez concrètement à l'association.</p>
-        <span class="badge-req">Motivations requises</span>
-      </div>
-      <div class="step reveal">
-        <div class="n">03</div>
-        <h3>Ajoutez votre formation</h3>
-        <p>Indiquez votre parcours académique et professionnel : il crédibilise votre candidature auprès des membres.</p>
-        <span class="badge-req">Formation requise</span>
-      </div>
-    </div>
-    <div class="notice reveal">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F1BA27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5M12 8h.01"/></svg>
-      <p><b>À noter —</b> Écrivez au Bureau <b>avant le lancement du formulaire</b>. Votre présentation apparaîtra ensuite sur cette page, dans la section du poste visé.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TOOLBAR (filters) ============ -->
-<div class="toolbar" id="postes">
-  <div class="wrap">
-    <div class="toolbar-inner">
-      <div class="chips" id="chips"></div>
-      <div class="search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D2841" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="search" id="search" placeholder="Rechercher un candidat, une formation…" aria-label="Rechercher">
-      </div>
-    </div>
-    <div class="count-line" id="countLine"></div>
-  </div>
-</div>
-
-<!-- ============ POSTS: BUREAU ============ -->
+<!-- ============ BUREAU ============ -->
 <section class="band-cream" id="bureau">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Bureau Exécutif</p>
-      <h2>Les postes clés &amp; leurs candidats</h2>
-      <p>Cinq à neuf membres, élus pour un mandat de deux ans, préparent et exécutent les décisions de l'Assemblée, organisent les activités et représentent l'association.</p>
+      <h2>Les postes clés &amp; celles et ceux qui se présentent</h2>
+      <p>Le Bureau prépare et exécute les décisions de l'Assemblée, organise les activités et représente l'association. Découvrez les présentations reçues pour chaque poste.</p>
     </div>
     <div id="bureauPosts"></div>
   </div>
 </section>
 
-<!-- ============ POSTS: COMMISSIONS ============ -->
+<!-- ============ COMMISSIONS ============ -->
 <section class="band-cream alt" id="commissions">
   <div class="wrap">
     <div class="section-head reveal">
@@ -501,11 +287,9 @@ footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1
   <div class="wrap">
     <img class="hero-crest" src="assets/logo.png" alt="Crest A-LEX">
     <h2>Ensemble, renforçons notre réseau</h2>
-    <p>Valorisons notre excellence et contribuons au rayonnement de notre identité et de la Côte d'Ivoire. Chaque candidature fait grandir A-LEX.</p>
+    <p>Merci à chaque membre qui s'est présenté. Valorisons notre excellence et contribuons au rayonnement de notre identité et de la Côte d'Ivoire.</p>
     <div class="hero-rule"></div>
-    <div class="hero-actions">
-      <a href="#candidater" class="btn btn-gold">Je me porte candidat(e)</a>
-    </div>
+    <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
   </div>
 </section>
 
@@ -519,7 +303,7 @@ footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1
       </div>
       <p class="foot-devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
     </div>
-    <div class="foot-bottom">Association des Anciens Élèves du LEAO — Espace candidatures &middot; Rigueur · Discipline · Excellence · Fraternité · Solidarité</div>
+    <div class="foot-bottom">Association des Anciens Élèves du LEAO — Présentations des candidats &middot; Rigueur · Discipline · Excellence · Fraternité · Solidarité</div>
   </div>
 </footer>
 
@@ -529,97 +313,200 @@ footer{background:#0a2036;color:var(--white-55);padding:44px 0 30px;border-top:1
 
 <script>
 /* ============================================================
-   DONNÉES — Postes (missions & rôles issus du document officiel)
+   POSTES — missions & rôles (source : document « Rôles & missions »)
    ============================================================ */
 const ICONS = {
   crown:'<path d="M3 18h18M4 8l4 4 4-7 4 7 4-4-1.5 10H5.5L4 8Z"/>',
   doc:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M9 13h8M9 17h5"/>',
   coins:'<ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M15 12.5c2.8-.2 6-1.3 6-3M15 17c3.3 0 6-1.3 6-3v-3"/>',
   mega:'<path d="M3 11v2a1 1 0 0 0 1 1h2l9 5V5L6 10H4a1 1 0 0 0-1 1Z"/><path d="M18 8a5 5 0 0 1 0 8"/>',
+  shield:'<path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/>',
   grad:'<path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 9v5"/>',
   cal:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14h.01M12 14h.01M16 14h.01"/>'
 };
 
 const POSTES = [
-  { id:'president', kind:'Direction stratégique', group:'bureau', short:'Président', icon:'crown',
+  { id:'president', group:'bureau', kind:'Direction stratégique', icon:'crown',
     title:'Président &amp; Vice-Président',
     mission:'Assurer la <b>direction stratégique</b> de l\'association et représenter A-LEX auprès des partenaires, institutions et membres.',
     roles:['Définir les orientations générales de l\'association.','Présider les réunions du Bureau et les Assemblées Générales.','Veiller à l\'application des décisions adoptées.','Représenter officiellement l\'association.','Arbitrer les décisions importantes.','Superviser l\'ensemble des commissions.'] },
-  { id:'secretaire', kind:'Administration', group:'bureau', short:'Secrétaire Général', icon:'doc',
+  { id:'secretaire', group:'bureau', kind:'Administration', icon:'doc',
     title:'Secrétaire Général',
     mission:'Assurer le <b>bon fonctionnement administratif</b> et organisationnel de l\'association.',
     roles:['Gérer les dossiers administratifs de l\'association.','Tenir à jour le registre des membres.','Préparer les convocations aux réunions.','Rédiger les procès-verbaux et comptes rendus.','Assurer le suivi des décisions du Bureau.','Conserver les archives et documents officiels.','Coordonner les activités entre les commissions.'] },
-  { id:'tresorier', kind:'Finances', group:'bureau', short:'Trésorier Général', icon:'coins',
+  { id:'tresorier', group:'bureau', kind:'Finances', icon:'coins',
     title:'Trésorier Général',
     mission:'Garantir une <b>gestion transparente et rigoureuse</b> des ressources financières de l\'association.',
     roles:['Collecter les cotisations et contributions.','Tenir la comptabilité de l\'association.','Préparer le budget annuel.','Assurer le suivi des dépenses et recettes.','Présenter les rapports financiers.','Veiller à la bonne utilisation des ressources.','Proposer des stratégies de mobilisation de fonds.'] },
-  { id:'communication', kind:'Image &amp; digital', group:'bureau', short:'Communication', icon:'mega',
+  { id:'communication', group:'bureau', kind:'Image &amp; digital', icon:'mega',
     title:'Responsable Production Digitale &amp; Communication',
     mission:'Développer <b>l\'image de marque</b> d\'A-LEX et assurer la communication interne et externe de l\'association.',
     roles:['Élaborer la stratégie de communication.','Gérer les réseaux sociaux et plateformes numériques.','Concevoir les visuels, vidéos et supports de communication.','Couvrir les événements de l\'association.','Valoriser les réussites des membres.','Produire du contenu inspirant et informatif.','Maintenir une bibliothèque numérique (photos, vidéos, documents).','Concevoir les outils digitaux de gestion de l\'association.'] },
-  { id:'mentorat', kind:'Insertion &amp; accompagnement', group:'commission', short:'Mentorat & Carrière', icon:'grad',
+  { id:'gouvernance', group:'bureau', kind:'Éthique &amp; transparence', icon:'shield',
+    title:'Responsable de la Bonne Gouvernance',
+    mission:'Veiller au <b>respect des textes et des valeurs</b> de l\'association, prévenir les abus et garantir une gouvernance transparente, équitable et fondée sur le dialogue.',
+    roles:['Garantir le respect des textes et règlements.','Prévenir les abus et les conflits d\'intérêts.','Promouvoir la transparence et l\'équité des décisions.','Veiller à ce que chaque organe agisse dans l\'intérêt commun.','Favoriser le dialogue et la médiation entre les membres.'] },
+  { id:'mentorat', group:'commission', kind:'Insertion &amp; accompagnement', icon:'grad',
     title:'Commission Mentorat &amp; Carrière',
     mission:'Favoriser <b>l\'insertion académique et professionnelle</b> des membres et accompagner les élèves du LEAO.',
     roles:['Mettre en place des programmes de mentorat.','Faciliter les échanges entre anciens et nouveaux diplômés.','Diffuser des opportunités de stages, d\'emploi et de formation.','Organiser des conférences métiers.','Accompagner les membres dans leur orientation professionnelle.','Développer le réseau professionnel A-LEX.'] },
-  { id:'evenements', kind:'Cohésion &amp; fraternité', group:'commission', short:'Événements', icon:'cal',
+  { id:'evenements', group:'commission', kind:'Cohésion &amp; fraternité', icon:'cal',
     title:'Commission Événements &amp; Vie Associative',
     mission:'Renforcer <b>la cohésion entre les membres</b> à travers des activités favorisant les échanges et la fraternité.',
     roles:['Organiser les rencontres annuelles.','Préparer les Assemblées Générales.','Organiser des conférences, galas et cérémonies.','Concevoir des activités sportives, culturelles et récréatives.','Assurer la logistique des événements.','Favoriser l\'intégration des nouvelles promotions.'] },
 ];
 
 /* ============================================================
-   DONNÉES — Candidats
+   CANDIDATS — lettres reproduites intégralement
    -----------------------------------------------------------
-   Pour AJOUTER un vrai candidat, copiez un bloc ci-dessous :
-   { poste:'president', name:'Prénom Nom', promo:'Promotion 2021',
-     formation:'Diplôme — École/Université',
-     pitch:'Le pitch / les motivations du candidat…',
-     example:false }
-   Les entrées « example:true » sont des démonstrations de mise
-   en page : supprimez-les dès l'arrivée des vraies candidatures.
+   Chaque lettre : tableau `letter` de paragraphes (ou {list:[...]}
+   pour une liste à puces). `sign` = signature de l'auteur.
+   Pour ajouter/modifier un candidat, éditez simplement ce tableau.
    ============================================================ */
 const CANDIDATS = [
-  { poste:'president', name:'A. Koné', promo:'Promotion 2020', example:true,
-    formation:'Ingénieur Génie Civil — INP-HB Yamoussoukro',
-    pitch:'Je souhaite servir A-LEX en donnant un cap clair à notre réseau. Mon expérience associative m\'a appris à écouter, fédérer et décider. Ensemble, faisons de notre appartenance une véritable force professionnelle.' },
-  { poste:'secretaire', name:'M. Traoré', promo:'Promotion 2021', example:true,
-    formation:'Licence en Droit des Affaires — Université Félix Houphouët-Boigny',
-    pitch:'La rigueur administrative est le socle d\'une association fiable. Je m\'engage à tenir nos registres, nos comptes rendus et nos archives avec une précision irréprochable, au service de la transparence.' },
-  { poste:'tresorier', name:'K. Yao', promo:'Promotion 2020', example:true,
-    formation:'Master Finance &amp; Comptabilité — INP-HB',
-    pitch:'Une gestion saine inspire confiance. Je propose un suivi budgétaire transparent, des rapports financiers clairs et des idées concrètes pour mobiliser des fonds au profit de tous les membres.' },
-  { poste:'communication', name:'F. Diomandé', promo:'Promotion 2022', example:true,
-    formation:'Licence en Communication Digitale — ISTC Polytechnique',
-    pitch:'Notre excellence mérite d\'être vue. Je veux moderniser notre image, animer nos réseaux et produire des contenus qui valorisent chaque réussite de nos membres et rayonnent au-delà de nos promotions.' },
+  /* ---------- PRÉSIDENT & VICE-PRÉSIDENT ---------- */
+  { poste:'president', name:'Ouattara Nassir', role:'Président',
+    formation:'Ancien élève du LEAO',
+    letter:[
+      `Bonjour à toutes et à tous,`,
+      `Je m'appelle Ouattara Nassir, ancien élève du LEAO, et je me présente aujourd'hui au poste de Président de notre association A-LEX.`,
+      `Depuis la fin de notre terminale, j'ai eu la chance d'entretenir une relation de confiance et une belle affinité avec nos professeurs ainsi qu'avec Madame le Proviseur. Ce lien, construit dans le respect et le sérieux, est un atout précieux pour représenter dignement notre association auprès du lycée et de ses responsables.`,
+      `Mes camarades m'ont souvent confié des responsabilités de premier plan, et c'est avec la même énergie que je souhaite aujourd'hui me mettre au service d'A-LEX. Diriger, pour moi, c'est d'abord écouter, rassembler et faire avancer chacun vers un objectif commun.`,
+      `Si vous m'accordez votre confiance, je m'engage à porter haut les valeurs qui nous unissent — rigueur, discipline, excellence, fraternité et solidarité — et à faire de notre association une communauté unie, active et rayonnante.`,
+      `Je sollicite votre confiance et votre soutien. Ensemble, faisons grandir A-LEX.`
+    ],
+    sign:'Ouattara Nassir',
+    note:'Présentation rédigée pour Ouattara Nassir à la demande du Bureau.' },
+  { poste:'president', name:'Tapé Jo', role:'Vice-Président',
+    formation:'Ancien élève du LEAO',
+    letter:[
+      `Je veux être vice-président pour participer aux grandes décisions concernant l'amicale. J'en ai les capacités et je ferai de mon mieux pour que vous soyez satisfaits.`
+    ],
+    sign:'TAPÉ Jo' },
+
+  /* ---------- SECRÉTAIRE GÉNÉRAL ---------- */
+  { poste:'secretaire', name:'Droh Michael', role:'Secrétaire Général',
+    formation:'Ex-Secrétaire Général de l\'AE-ESCA · Ex-Secrétaire Général adjoint (section INP-HB)',
+    letter:[
+      `Mon parcours associatif m'a permis d'acquérir une solide expérience dans cette fonction. J'ai eu l'honneur d'être le premier Secrétaire Général adjoint de la section nouvellement créée de l'INPHB, où j'ai participé à la mise en place des bases administratives et organisationnelles de la structure. Par la suite, j'ai occupé le poste de Secrétaire Général de l'AE-ESCA, une expérience qui m'a permis de développer une grande rigueur dans la gestion administrative, la rédaction des procès-verbaux, le suivi des décisions du bureau, la coordination des équipes et la préparation des réunions.`,
+      `Ces responsabilités m'ont appris qu'un Secrétaire Général est bien plus qu'un simple rédacteur de comptes rendus. Il est le garant de l'organisation, de la continuité des actions et de la bonne circulation de l'information au sein de l'association. Il veille au respect des procédures, assure le suivi des décisions et contribue à créer un environnement de travail efficace et structuré, en cohérence avec les missions du Secrétaire Général de notre association.`,
+      `Je suis reconnu pour mon sens de l'organisation, ma rigueur, mon esprit d'analyse, ma discrétion, ma capacité à travailler sous pression et mon aisance à collaborer avec des équipes aux profils variés. Sérieux, méthodique et disponible, je sais faire preuve d'initiative tout en restant à l'écoute des besoins de chacun.`,
+      `Si vous m'accordez votre confiance, je m'engage à mettre mon expérience, mon professionnalisme et mon sens du service au profit de notre association. Mon ambition est de bâtir une administration efficace, transparente et réactive, afin que chaque décision soit suivie d'actions concrètes et que notre association poursuive son développement sur des bases solides.`,
+      `Je sollicite donc votre confiance et votre soutien. Ensemble, faisons de notre association une organisation toujours plus structurée, dynamique et performante.`,
+      `Je vous remercie.`
+    ],
+    sign:'DROH Michael' },
+
+  /* ---------- TRÉSORIER GÉNÉRAL ---------- */
+  { poste:'tresorier', name:'Ateby Yannick', role:'Trésorier Général',
+    formation:'Master 1 Finance — UFR SEG, UFHB',
+    letter:[
+      `Bonjour à tous,`,
+      `Je me présente pour le poste de trésorier de notre amicale ALEX parce que je veux mettre mes compétences au service de notre association, avec rigueur et transparence.`,
+      `Actuellement en Master 1 Finance à l'UFR SEG UFHB, j'aimerais mettre mes humbles connaissances et mon engagement à notre disposition pour une gestion claire et transparente de notre trésorerie, par votre soutien, en vue qu'elle soit toujours saine pour financer nos projets.`
+    ],
+    sign:'ATEBY YANNICK' },
+  { poste:'tresorier', name:'Koné Adams', role:'Trésorier Général',
+    formation:'Comptabilité &amp; Gestion — INTEC (France) · ex-CPDEC Abidjan',
+    letter:[
+      `Bonjour à tous,`,
+      `Je me présente aujourd'hui pour le poste de trésorier de notre association. Je suis convaincu que mes compétences et mon expérience, à la fois pratiques et académiques, sont un atout majeur pour assurer une gestion financière rigoureuse et transparente.`,
+      `Mon parcours a débuté très jeune, en gérant la supérette de ma mère. Cette expérience « sur le terrain » m'a appris à gérer les approvisionnements, les comptes et les flux d'argent, avec une grande autonomie et un minimum d'erreurs. J'ai ainsi développé une compréhension concrète de la gestion des fonds, notamment lorsqu'il s'agit de contributions multiples.`,
+      `Parallèlement, j'ai consolidé cette expérience par des études approfondies en comptabilité et gestion. J'ai passé deux ans au Centre de Préparation pour le Diplôme d'Expertise Comptable (CPDEC) à Abidjan, et je suis actuellement à l'Institut National des Techniques Économiques et Comptables en France, avec l'objectif d'atteindre le Master 1 l'année prochaine. J'ai acquis une solide maîtrise de la comptabilité générale, du droit des sociétés et des associations, ainsi que de la comptabilité approfondie.`,
+      `Je suis conscient que le rôle de trésorier ne requiert pas toujours un diplôme d'expert-comptable. Cependant, pour apporter le professionnalisme et la rigueur que nous souhaitons pour notre association, je crois fermement que la combinaison de mon expérience pratique et de ma formation académique est un avantage indéniable. Cela me permet de gérer l'argent de l'association avec la plus grande intégrité et efficacité.`,
+      `Je suis prêt à mettre mes compétences au service de notre association pour garantir une gestion financière saine et au service de nos objectifs communs.`,
+      `Merci de votre attention.`
+    ],
+    sign:'Koné Adams' },
+
+  /* ---------- BONNE GOUVERNANCE ---------- */
+  { poste:'gouvernance', name:'Koffi Mohaye Lyvan Ange', role:'Bonne Gouvernance',
+    formation:'INP-HB — Cycle ingénieur Supply Chain Management · Bac série C 2022 (LEAO)',
+    letter:[
+      `Bonjour à toutes et à tous.`,
+      `Je m'appelle KOFFI MOHAYE LYVAN ANGE, ancien élève du LEAO, où j'ai effectué trois années d'études et obtenu mon baccalauréat série C en 2022. Aujourd'hui, je poursuis ma formation en première année du cycle ingénieur en Supply Chain Management à l'INP-HB.`,
+      `C'est avec beaucoup de fierté que je présente ma candidature au poste de Responsable de la Bonne Gouvernance de l'Association des ALEX. En tant qu'alumni, je considère qu'il est de mon devoir de contribuer au développement et au rayonnement de cette association qui nous rassemble. Je souhaite mettre mon sens de l'organisation, ma rigueur et mon impartialité au service de tous, afin de garantir le respect de nos textes, de prévenir les abus et de favoriser une gouvernance fondée sur la transparence, l'équité et le dialogue.`,
+      `Mon ambition n'est pas de contrôler les membres, mais de veiller à ce que chaque organe fonctionne dans l'intérêt de l'association et de ses valeurs. Je sollicite donc votre confiance afin de servir notre communauté avec responsabilité et intégrité.`
+    ],
+    sign:'KOFFI MOHAYE LYVAN' },
+
+  /* ---------- COMMISSION MENTORAT & CARRIÈRE ---------- */
+  { poste:'mentorat', name:'Erica Ama', role:'Mentorat &amp; Carrière',
+    formation:'5ᵉ année de Médecine',
+    letter:[
+      `Parce que l'orientation ne s'arrête pas au choix d'une école, mais se construit aussi grâce aux rencontres et aux opportunités. Je suis convaincue qu'un bon conseil, donné au bon moment, peut non seulement changer une trajectoire, mais aussi révéler le plein potentiel d'une personne. C'est pourquoi je souhaite rejoindre le pôle Mentorat et Carrière pour contribuer à accompagner les étudiants dans leur parcours.`,
+      `Je m'appelle Erica AMA, je suis en 5ᵉ année de médecine. Au fil de mon parcours, j'ai compris qu'on avance rarement seul. J'aimerais à mon tour être ce petit coup de pouce qui fait parfois toute la différence, en partageant les bonnes informations et en créant des liens entre les étudiants et les anciens élèves.`,
+      `Merci 🤗.`
+    ],
+    sign:'Ama Erica' },
+  { poste:'mentorat', name:'Koné Isaac', role:'Mentorat &amp; Carrière',
+    formation:'Master au CURAT — Télédétection, SIG &amp; Gestion de projets',
+    letter:[
+      `Bonjour à tous, je m'appelle Mohamed Isaac Koné, étudiant en Master au CURAT, où je me forme en télédétection, SIG et gestion de projets.`,
+      `Ma formation m'a appris à travailler avec rigueur, à coordonner des équipes et à proposer des solutions concrètes.`,
+      `Je souhaite intégrer la Commission Mentorat & Carrière pour accompagner les étudiants, créer des opportunités et renforcer les liens entre anciens et nouveaux diplômés.`,
+      `À l'écoute, organisé et motivé, je suis prêt à m'investir pleinement dans les missions de la commission.`,
+      `Je suis convaincu que mon sens des responsabilités et mon engagement font de moi un excellent candidat pour ce poste.`
+    ],
+    sign:'Koné Isaac' },
+  { poste:'mentorat', name:'Adja Pierre Samuel', role:'Mentorat &amp; Carrière',
+    formation:'INP-HB — Chimie &amp; Génie des procédés (option FPF)',
+    letter:[
+      `Actuellement étudiant en chimie et génie des procédés option formulation des produits fonctionnels (FPF) à l'Institut National Polytechnique Félix Houphouët-Boigny (INP-HB), j'ai l'honneur de vous soumettre ma candidature pour le poste de Responsable de la Commission Mentorat & Carrière au sein de notre association d'alumni, A-LEX.`,
+      `Véritablement investi dans la réussite et l'épanouissement de nos membres, je suis convaincu que la transmission d'expérience et le développement professionnel sont des piliers essentiels d'une communauté alumni dynamique. En prenant connaissance du rôle et des missions de cette commission, j'ai immédiatement ressenti une profonde adéquation entre mes valeurs et les objectifs que vous portez.`,
+      { priorities:'Mes priorités :', list:[
+        `Structurer un programme de mentorat efficace entre anciens et nouveaux diplômés ;`,
+        `Organiser des conférences métiers et diffuser des opportunités (stages, emplois) ;`,
+        `Développer le réseau professionnel A-LEX et renforcer l'insertion des élèves du LEAO ;`,
+        `Assurer un suivi personnalisé des membres dans leur projet de carrière.`
+      ]},
+      `Rigoureux, fédérateur et force de proposition, je saurai animer cette commission avec dynamisme et en étroite collaboration avec les autres pôles de l'association.`,
+      `Je me tiens à votre disposition pour un échange. En vous remerciant pour votre considération.`,
+      `Bien cordialement,`
+    ],
+    sign:'ADJA PIERRE SAMUEL' },
+
+  /* ---------- COMMISSION ÉVÉNEMENTS & VIE ASSOCIATIVE ---------- */
+  { poste:'evenements', name:'Douati Dylane', role:'Événements &amp; Vie Associative',
+    formation:'Ancien élève du LEAO',
+    letter:[
+      `Je me présente pour le poste de président de la commission évènementiel car je pense être capable de répondre à vos attentes en termes d'organisation de différents événements. Je vous ai plusieurs fois démontré ma capacité à orchestrer des événements durant notre parcours scolaire au LEAO et je ferai encore mieux si vous me choisissez.`
+    ],
+    sign:'DOUATI Dylane' },
 ];
 
 /* ============================================================
    RENDU
    ============================================================ */
-const esc = s => String(s);
-const initials = n => n.replace(/[^A-Za-zÀ-ÿ. ]/g,'').split(/[.\s]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const initials = n => n.split(/[.\s]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F1BA27" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 
-function candCard(c){
-  const p = POSTES.find(p=>p.id===c.poste);
-  return `<article class="cand reveal" data-poste="${c.poste}"
-      data-text="${(c.name+' '+c.formation+' '+c.promo+' '+c.pitch+' '+(p?p.short:'')).toLowerCase().replace(/"/g,'')}">
-    ${c.example?'<span class="ribbon-ex">Exemple</span>':''}
-    <div class="cand-top">
+function letterBody(items){
+  return items.map(it=>{
+    if(typeof it === 'string') return `<p>${it}</p>`;
+    if(it.list){
+      const lead = it.priorities ? `<p class="priorities">${it.priorities}</p>` : '';
+      return lead + `<ul>${it.list.map(li=>`<li>${CHECK}<span>${li}</span></li>`).join('')}</ul>`;
+    }
+    return '';
+  }).join('');
+}
+
+function letterCard(c){
+  return `<article class="letter reveal">
+    <div class="letter-head">
       <div class="avatar">${initials(c.name)}</div>
-      <div class="cand-id">
-        <div class="name">${esc(c.name)}</div>
-        <div class="promo">${esc(c.promo)}</div>
+      <div class="letter-id">
+        <div class="name">${c.name}</div>
+        <span class="role">${c.role}</span>
+        ${c.formation?`<div class="letter-form">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f6c94a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+          <span>${c.formation}</span></div>`:''}
       </div>
     </div>
-    <div class="cand-form">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F1BA27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
-      <span>${esc(c.formation)}</span>
-    </div>
-    <p class="pitch"><span class="q">“</span>${esc(c.pitch)}</p>
-    <div class="cand-foot">
-      <span class="tag">${p?p.short:''}</span>
-      ${c.example?'<span class="tag example">Présentation type</span>':''}
-    </div>
+    <div class="letter-body">${letterBody(c.letter)}</div>
+    <div class="letter-sign"><span class="by">${c.sign}</span><span class="role-mini">Candidat(e) — ${c.role}</span></div>
+    ${c.note?`<p class="letter-note">${c.note}</p>`:''}
   </article>`;
 }
 
@@ -628,89 +515,43 @@ function postBlock(p){
   const rolesHtml = p.roles.map(r=>`<li>
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#cf9d16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       <span>${r}</span></li>`).join('');
-  const candsHtml = cands.length
-      ? cands.map(candCard).join('')
-      : `<div class="empty">
-          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cf9d16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
-          <h4>Aucune candidature pour l'instant</h4>
-          <p>Ce poste attend sa première présentation. Proposez la vôtre auprès du Bureau avant le lancement du formulaire.</p>
-          <a href="#candidater" class="btn btn-gold" style="padding:11px 22px;font-size:.9rem">Me présenter à ce poste</a>
+  const pill = cands.length
+      ? `<span class="count-pill">${cands.length} présentation${cands.length>1?'s':''}</span>`
+      : '';
+  const body = cands.length
+      ? `<div class="letters">${cands.map(letterCard).join('')}</div>`
+      : `<div class="empty reveal">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cf9d16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H7l-3 3z"/></svg></div>
+          <h4>Aucune présentation pour ce poste</h4>
+          <p>Aucune lettre n'a encore été reçue pour ce poste.</p>
         </div>`;
-  return `<div class="post" id="poste-${p.id}" data-poste="${p.id}">
+  return `<div class="post" id="poste-${p.id}">
     <div class="post-head reveal">
       <div class="post-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#0D2841" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONS[p.icon]}</svg></div>
       <div class="pt">
         <div class="post-kind">${p.kind}</div>
         <h3>${p.title}</h3>
+        ${pill}
       </div>
     </div>
     <div class="mission reveal">${p.mission}</div>
     <p class="roles-title reveal">Rôles &amp; responsabilités</p>
     <ul class="roles reveal">${rolesHtml}</ul>
-    <div class="cands">${candsHtml}</div>
+    ${body}
   </div>`;
 }
 
 document.getElementById('bureauPosts').innerHTML = POSTES.filter(p=>p.group==='bureau').map(postBlock).join('');
 document.getElementById('commissionPosts').innerHTML = POSTES.filter(p=>p.group==='commission').map(postBlock).join('');
 
-/* ============ Filter chips ============ */
-const chipsEl = document.getElementById('chips');
-let chipsHtml = `<button class="chip active" data-f="all"><span class="dot"></span>Tous les postes</button>`;
-chipsHtml += POSTES.map(p=>`<button class="chip" data-f="${p.id}"><span class="dot"></span>${p.short}</button>`).join('');
-chipsEl.innerHTML = chipsHtml;
+/* ============ Stats ============ */
+const nbLetters = CANDIDATS.length;
+const nbPostes = new Set(CANDIDATS.map(c=>c.poste)).size;
+const statNums = document.querySelectorAll('#stats .num');
+statNums[0].dataset.count = nbLetters;
+statNums[1].dataset.count = nbPostes;
 
-let state = {poste:'all', q:''};
-const countLine = document.getElementById('countLine');
-
-function applyFilters(){
-  const cards = document.querySelectorAll('.cand');
-  let visibleCands = 0;
-  cards.forEach(card=>{
-    const okPoste = state.poste==='all' || card.dataset.poste===state.poste;
-    const okQ = !state.q || card.dataset.text.includes(state.q);
-    const show = okPoste && okQ;
-    card.style.display = show ? '' : 'none';
-    if(show) visibleCands++;
-  });
-  // show/hide whole post blocks
-  document.querySelectorAll('.post').forEach(block=>{
-    const okPoste = state.poste==='all' || block.dataset.poste===state.poste;
-    if(!okPoste){ block.style.display='none'; return; }
-    // if searching, hide blocks whose visible cards are 0 (unless empty-state & no query)
-    if(state.q){
-      const anyVisible = block.querySelector('.cand:not([style*="display: none"])');
-      block.style.display = anyVisible ? '' : 'none';
-    } else {
-      block.style.display = '';
-    }
-  });
-  const total = CANDIDATS.length;
-  if(state.q || state.poste!=='all'){
-    countLine.innerHTML = `<b>${visibleCands}</b> présentation${visibleCands>1?'s':''} affichée${visibleCands>1?'s':''}`;
-  } else {
-    countLine.innerHTML = `<b>${total}</b> présentation${total>1?'s':''} · <b>${POSTES.length}</b> postes ouverts aux candidatures`;
-  }
-}
-
-chipsEl.addEventListener('click', e=>{
-  const btn = e.target.closest('.chip'); if(!btn) return;
-  chipsEl.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-  btn.classList.add('active');
-  state.poste = btn.dataset.f;
-  applyFilters();
-  if(state.poste!=='all'){
-    const el = document.getElementById('poste-'+state.poste);
-    if(el){ const y = el.getBoundingClientRect().top + scrollY - 150; scrollTo({top:y, behavior:'smooth'}); }
-  }
-});
-document.getElementById('search').addEventListener('input', e=>{
-  state.q = e.target.value.trim().toLowerCase();
-  applyFilters();
-});
-applyFilters();
-
-/* ============ Header + burger + back-to-top ============ */
+/* ============ Header shadow + back-to-top ============ */
 const header = document.querySelector('.site-header');
 const totop = document.getElementById('totop');
 addEventListener('scroll', ()=>{
@@ -719,15 +560,10 @@ addEventListener('scroll', ()=>{
 });
 totop.addEventListener('click', ()=>scrollTo({top:0,behavior:'smooth'}));
 
-const burger = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', ()=>navLinks.classList.toggle('open'));
-navLinks.addEventListener('click', e=>{ if(e.target.tagName==='A') navLinks.classList.remove('open'); });
-
 /* ============ Reveal on scroll ============ */
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-},{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+},{threshold:0.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* ============ Count-up stats ============ */
@@ -735,8 +571,8 @@ const statsIO = new IntersectionObserver((entries)=>{
   entries.forEach(en=>{
     if(!en.isIntersecting) return;
     const el = en.target, target = +el.dataset.count; let n=0;
-    const step = Math.max(1, Math.round(target/28));
-    const t = setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(t);} el.textContent=n; }, 28);
+    const step = Math.max(1, Math.round(target/24));
+    const t = setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(t);} el.textContent=n; }, 32);
     statsIO.unobserve(el);
   });
 },{threshold:0.6});
