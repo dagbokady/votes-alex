@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A-LEX — Présentations des candidats</title>
 <meta name="description" content="Les membres d'A-LEX qui se sont désignés pour un poste prennent la parole : découvrez leurs présentations et leurs lettres de motivation dans leur intégralité.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="shortcut icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#0D2841">
 <style>
 /* ============================================================
    A-LEX — Présentations des candidats
@@ -159,6 +164,7 @@ img{max-width:100%;display:block}
 }
 .letter-id{min-width:0;flex:1}
 .letter-id .name{font-size:1.3rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.01em}
+.letter-id .classe{display:inline-block;vertical-align:middle;margin-left:9px;position:relative;top:-2px;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2);border:1px solid rgba(241,186,39,.4);border-radius:3px;padding:2px 6px}
 .letter-id .role{display:inline-block;margin-top:9px;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:3px 0;border-bottom:1px solid rgba(241,186,39,.55)}
 .letter-form{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--gold-2);margin-top:10px;font-weight:500}
 .letter-form svg{flex:0 0 auto;margin-top:2px;opacity:.85}
@@ -351,10 +357,10 @@ const POSTES = [
     title:'Responsable Production Digitale &amp; Communication',
     mission:'Développer <b>l\'image de marque</b> d\'A-LEX et assurer la communication interne et externe de l\'association.',
     roles:['Élaborer la stratégie de communication.','Gérer les réseaux sociaux et plateformes numériques.','Concevoir les visuels, vidéos et supports de communication.','Couvrir les événements de l\'association.','Valoriser les réussites des membres.','Produire du contenu inspirant et informatif.','Maintenir une bibliothèque numérique (photos, vidéos, documents).','Concevoir les outils digitaux de gestion de l\'association.'] },
-  { id:'gouvernance', group:'bureau', kind:'Éthique &amp; transparence', icon:'shield',
-    title:'Responsable de la Bonne Gouvernance',
-    mission:'Veiller au <b>respect des textes et des valeurs</b> de l\'association, prévenir les abus et garantir une gouvernance transparente, équitable et fondée sur le dialogue.',
-    roles:['Garantir le respect des textes et règlements.','Prévenir les abus et les conflits d\'intérêts.','Promouvoir la transparence et l\'équité des décisions.','Veiller à ce que chaque organe agisse dans l\'intérêt commun.','Favoriser le dialogue et la médiation entre les membres.'] },
+  { id:'controle', group:'bureau', kind:'Contrôle &amp; conformité', icon:'shield',
+    title:'Responsable Contrôle Fiscal &amp; Administratif',
+    mission:'Assurer le <b>contrôle fiscal et administratif</b> de l\'association : veiller au respect des textes et des procédures, à la bonne utilisation des ressources et à la transparence des décisions.',
+    roles:['Contrôler la régularité des opérations administratives et financières.','Veiller au respect des textes, statuts et règlements.','Prévenir les abus, fraudes et conflits d\'intérêts.','Vérifier la bonne utilisation des ressources de l\'association.','Garantir la transparence et l\'équité des décisions.','Rendre compte à l\'Assemblée et favoriser le dialogue.'] },
   { id:'mentorat', group:'commission', kind:'Insertion &amp; accompagnement', icon:'grad',
     title:'Commission Mentorat &amp; Carrière',
     mission:'Favoriser <b>l\'insertion académique et professionnelle</b> des membres et accompagner les élèves du LEAO.',
@@ -374,7 +380,7 @@ const POSTES = [
    ============================================================ */
 const CANDIDATS = [
   /* ---------- PRÉSIDENT & VICE-PRÉSIDENT ---------- */
-  { poste:'president', name:'Ouattara Nassir', role:'Président',
+  { poste:'president', name:'Ouattara Ibrahim Nassir', role:'Président', classe:'TC1',
     formation:'Ancien élève du LEAO',
     letter:[
       `Bonjour à toutes et à tous,`,
@@ -386,7 +392,7 @@ const CANDIDATS = [
     ],
     sign:'Ouattara Nassir',
     note:'Présentation rédigée pour Ouattara Nassir à la demande du Bureau.' },
-  { poste:'president', name:'Tapé Jo', role:'Vice-Président',
+  { poste:'president', name:'Tapé Jo Marcel Brito', role:'Vice-Président', classe:'TC1',
     formation:'Ancien élève du LEAO',
     letter:[
       `Je veux être vice-président pour participer aux grandes décisions concernant l'amicale. J'en ai les capacités et je ferai de mon mieux pour que vous soyez satisfaits.`
@@ -394,7 +400,7 @@ const CANDIDATS = [
     sign:'TAPÉ Jo' },
 
   /* ---------- SECRÉTAIRE GÉNÉRAL ---------- */
-  { poste:'secretaire', name:'Droh Michael', role:'Secrétaire Général',
+  { poste:'secretaire', name:'Droh Michael Charles', role:'Secrétaire Général', classe:'TD',
     formation:'Ex-Secrétaire Général de l\'AE-ESCA · Ex-Secrétaire Général adjoint (section INP-HB)',
     letter:[
       `Mon parcours associatif m'a permis d'acquérir une solide expérience dans cette fonction. J'ai eu l'honneur d'être le premier Secrétaire Général adjoint de la section nouvellement créée de l'INPHB, où j'ai participé à la mise en place des bases administratives et organisationnelles de la structure. Par la suite, j'ai occupé le poste de Secrétaire Général de l'AE-ESCA, une expérience qui m'a permis de développer une grande rigueur dans la gestion administrative, la rédaction des procès-verbaux, le suivi des décisions du bureau, la coordination des équipes et la préparation des réunions.`,
@@ -407,7 +413,7 @@ const CANDIDATS = [
     sign:'DROH Michael' },
 
   /* ---------- TRÉSORIER GÉNÉRAL ---------- */
-  { poste:'tresorier', name:'Ateby Yannick', role:'Trésorier Général',
+  { poste:'tresorier', name:'Ateby Yannick', role:'Trésorier Général', classe:'TD',
     formation:'Master 1 Finance — UFR SEG, UFHB',
     letter:[
       `Bonjour à tous,`,
@@ -415,7 +421,7 @@ const CANDIDATS = [
       `Actuellement en Master 1 Finance à l'UFR SEG UFHB, j'aimerais mettre mes humbles connaissances et mon engagement à notre disposition pour une gestion claire et transparente de notre trésorerie, par votre soutien, en vue qu'elle soit toujours saine pour financer nos projets.`
     ],
     sign:'ATEBY YANNICK' },
-  { poste:'tresorier', name:'Koné Adams', role:'Trésorier Général',
+  { poste:'tresorier', name:'Koné Adams', role:'Trésorier Général', classe:'TD',
     formation:'Comptabilité &amp; Gestion — INTEC (France) · ex-CPDEC Abidjan',
     letter:[
       `Bonjour à tous,`,
@@ -429,7 +435,7 @@ const CANDIDATS = [
     sign:'Koné Adams' },
 
   /* ---------- PRODUCTION DIGITALE & COMMUNICATION ---------- */
-  { poste:'communication', name:'Dagbo Kady', role:'Production Digitale &amp; Communication',
+  { poste:'communication', name:'Dagbo Christ-Phanuel', role:'Production Digitale &amp; Communication', classe:'TC2',
     formation:'ESATIC — École Supérieure Africaine des TIC',
     letter:[
       `Chers membres de la communauté A-LEX,`,
@@ -443,7 +449,7 @@ const CANDIDATS = [
     sign:'DAGBO KADY' },
 
   /* ---------- BONNE GOUVERNANCE ---------- */
-  { poste:'gouvernance', name:'Koffi Mohaye Lyvan Ange', role:'Bonne Gouvernance',
+  { poste:'controle', name:'Koffi Mohaye Lyvan Ange', role:'Contrôle Fiscal &amp; Administratif', classe:'TC2',
     formation:'INP-HB — Cycle ingénieur Supply Chain Management · Bac série C 2022 (LEAO)',
     letter:[
       `Bonjour à toutes et à tous.`,
@@ -454,7 +460,7 @@ const CANDIDATS = [
     sign:'KOFFI MOHAYE LYVAN' },
 
   /* ---------- COMMISSION MENTORAT & CARRIÈRE ---------- */
-  { poste:'mentorat', name:'Erica Ama', role:'Mentorat &amp; Carrière',
+  { poste:'mentorat', name:'Ama Erica', role:'Mentorat &amp; Carrière', classe:'TD',
     formation:'5ᵉ année de Médecine',
     letter:[
       `Parce que l'orientation ne s'arrête pas au choix d'une école, mais se construit aussi grâce aux rencontres et aux opportunités. Je suis convaincue qu'un bon conseil, donné au bon moment, peut non seulement changer une trajectoire, mais aussi révéler le plein potentiel d'une personne. C'est pourquoi je souhaite rejoindre le pôle Mentorat et Carrière pour contribuer à accompagner les étudiants dans leur parcours.`,
@@ -462,7 +468,7 @@ const CANDIDATS = [
       `Merci 🤗.`
     ],
     sign:'Ama Erica' },
-  { poste:'mentorat', name:'Koné Isaac', role:'Mentorat &amp; Carrière',
+  { poste:'mentorat', name:'Koné Isaac Hérèdé', role:'Mentorat &amp; Carrière', classe:'TD',
     formation:'Master au CURAT — Télédétection, SIG &amp; Gestion de projets',
     letter:[
       `Bonjour à tous, je m'appelle Mohamed Isaac Koné, étudiant en Master au CURAT, où je me forme en télédétection, SIG et gestion de projets.`,
@@ -472,7 +478,7 @@ const CANDIDATS = [
       `Je suis convaincu que mon sens des responsabilités et mon engagement font de moi un excellent candidat pour ce poste.`
     ],
     sign:'Koné Isaac' },
-  { poste:'mentorat', name:'Adja Pierre Samuel', role:'Mentorat &amp; Carrière',
+  { poste:'mentorat', name:'Adja Pierre Samuel', role:'Mentorat &amp; Carrière', classe:'TD',
     formation:'INP-HB — Chimie &amp; Génie des procédés (option FPF)',
     letter:[
       `Actuellement étudiant en chimie et génie des procédés option formulation des produits fonctionnels (FPF) à l'Institut National Polytechnique Félix Houphouët-Boigny (INP-HB), j'ai l'honneur de vous soumettre ma candidature pour le poste de Responsable de la Commission Mentorat & Carrière au sein de notre association d'alumni, A-LEX.`,
@@ -489,7 +495,7 @@ const CANDIDATS = [
     ],
     sign:'ADJA PIERRE SAMUEL' },
 
-  { poste:'mentorat', name:'Tano Aimée Sylvestre', role:'Mentorat &amp; Carrière',
+  { poste:'mentorat', name:'Tanoh Aimé Sylvestre', role:'Mentorat &amp; Carrière', classe:'TD',
     formation:'Études Comptables Supérieures (ECS)',
     letter:[
       `Chers membres de la communauté A-LEX,`,
@@ -502,10 +508,10 @@ const CANDIDATS = [
       { em:true, text:`Parce que l'excellence ne se limite pas à nos résultats académiques ; elle se mesure aussi à notre capacité à ouvrir des portes aux autres et à préparer l'avenir de ceux qui viendront après nous.` },
       { devise:true, text:`« Qui cultive la Rigueur et la Discipline cueille l'Excellence. »` }
     ],
-    sign:'TANO AIMÉE SYLVESTRE' },
+    sign:'TANOH AIMÉ SYLVESTRE' },
 
   /* ---------- COMMISSION ÉVÉNEMENTS & VIE ASSOCIATIVE ---------- */
-  { poste:'evenements', name:'Douati Dylane', role:'Événements &amp; Vie Associative',
+  { poste:'evenements', name:'Douati Dylane', role:'Événements &amp; Vie Associative', classe:'TD',
     formation:'Ancien élève du LEAO',
     letter:[
       `Je me présente pour le poste de président de la commission évènementiel car je pense être capable de répondre à vos attentes en termes d'organisation de différents événements. Je vous ai plusieurs fois démontré ma capacité à orchestrer des événements durant notre parcours scolaire au LEAO et je ferai encore mieux si vous me choisissez.`
@@ -537,7 +543,7 @@ function letterCard(c){
     <div class="letter-head">
       <div class="avatar">${initials(c.name)}</div>
       <div class="letter-id">
-        <div class="name">${c.name}</div>
+        <div class="name">${c.name}${c.classe?` <span class="classe" title="Classe au LEAO">${c.classe}</span>`:''}</div>
         <span class="role">${c.role}</span>
         ${c.formation?`<div class="letter-form">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f6c94a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>

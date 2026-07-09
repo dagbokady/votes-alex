@@ -40,7 +40,8 @@ Aucune installation n'est nécessaire.
 Candidats/
 ├── index.html          # La page (contenu, style et scripts)
 ├── assets/
-│   └── logo.png        # Écusson A-LEX (fond détouré, transparent)
+│   ├── logo.png        # Écusson A-LEX (fond détouré, transparent)
+│   └── favicon-*.png   # Favicon (écusson sur fond navy, plusieurs tailles)
 └── README.md           # Ce fichier
 ```
 
@@ -49,21 +50,27 @@ Candidats/
 Les postes et leurs missions/rôles proviennent du document officiel
 « Rôles & missions ». Les présentations reçues sont réparties ainsi :
 
-| Poste                                   | Groupe        | Présentations |
-|-----------------------------------------|---------------|---------------|
-| Président & Vice-Président              | Bureau        | Ouattara Nassir (Président), Tapé Jo (Vice-Président) |
-| Secrétaire Général                      | Bureau        | Droh Michael |
-| Trésorier Général                       | Bureau        | Ateby Yannick, Koné Adams |
-| Resp. Production Digitale & Communication | Bureau      | Dagbo Kady |
-| Responsable de la Bonne Gouvernance     | Bureau        | Koffi Mohaye Lyvan Ange |
-| Commission Mentorat & Carrière          | Commission    | Erica Ama, Koné Isaac, Adja Pierre Samuel, Tano Aimée Sylvestre |
-| Commission Événements & Vie Associative | Commission    | Douati Dylane |
+Noms et classes (TC1 / TC2 / TD = classe de terminale au LEAO) tels que sur le
+bulletin officiel :
 
-> **À noter :** les présentations d'**Ouattara Nassir** (Président) et de **Dagbo Kady**
-> (Communication) ont été **rédigées à leur demande** ; toutes les autres lettres sont
-> reproduites telles que leurs auteurs les ont écrites. Le poste **« Responsable de la
-> Bonne Gouvernance »** ne figure pas dans l'organigramme initial : il a été ajouté car
-> un membre s'est présenté pour ce rôle.
+| Poste (bulletin)                        | Candidat(s) — classe |
+|-----------------------------------------|----------------------|
+| Président                               | Ouattara Ibrahim Nassir (TC1) |
+| Vice-Président                          | Tapé Jo Marcel Brito (TC1) |
+| Secrétaire Général                      | Droh Michael Charles (TD) |
+| Trésorier Général                       | Ateby Yannick (TD), Koné Adams (TD) |
+| Resp. Production Digitale & Communication | Dagbo Christ-Phanuel (TC2) |
+| Resp. Contrôle Fiscal & Administratif   | Koffi Mohaye Lyvan Ange (TC2) |
+| Resp. Commission Mentorat & Carrière    | Ama Erica (TD), Koné Isaac Hérèdé (TD), Adja Pierre Samuel (TD), Tanoh Aimé Sylvestre (TD) |
+| Resp. Commission Événements & Vie associative | Douati Dylane (TD) |
+
+> **À noter :**
+> - Les présentations d'**Ouattara Ibrahim Nassir** (Président) et de **Dagbo
+>   Christ-Phanuel** (Communication) ont été **rédigées à leur demande** ; toutes les
+>   autres lettres sont reproduites telles que leurs auteurs les ont écrites.
+> - **Tanoh Aimé Sylvestre** figure sur le bulletin parmi les candidats au poste de
+>   Trésorier, mais sa lettre postule pour Mentorat & Carrière ; il est donc présenté
+>   sous **Mentorat & Carrière** (choix validé).
 
 ## Ajouter ou modifier une présentation
 
@@ -107,6 +114,11 @@ Ajoutez une entrée dans le tableau `POSTES` (id, `group`, `kind`, `icon`, `titl
   (`--navy`, `--gold`, `--cream`, `--font`).
 - **Textes d'introduction** : sections `.hero`, `#bureau`, `#commissions` et le
   bloc de clôture.
+
+Le style suit un parti pris **éditorial** (filets fins plutôt que pilules colorées,
+encadrés « dossier », barre de statistiques, badges plats) pour un rendu soigné et
+« sur-mesure ». Ce système est documenté dans le skill Claude **`alex-brand`**
+(`~/.claude/skills/alex-brand/`), réutilisable pour tout futur support A-LEX.
 
 ---
 
