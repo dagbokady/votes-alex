@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A-LEX — Le Bureau Exécutif &amp; les Commissions</title>
 <meta name="description" content="Le Bureau Exécutif d'A-LEX, élu par l'Assemblée : organigramme, membres, commissions — et les appels à candidature ouverts pour rejoindre les commissions.">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/logo-alex.png.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/logo-alex.png.png">
-<link rel="shortcut icon" href="assets/logo-alex-blanc.png.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="shortcut icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <meta name="theme-color" content="#0B2240">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,6 +137,8 @@ img{max-width:100%;display:block}
   color:var(--gold);padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid rgba(212,175,55,.24);line-height:1.5}
 .org-cell .m{font-size:.86rem;line-height:1.45;color:#fff;font-weight:600;margin-bottom:9px}
 .org-cell .m:last-child{margin-bottom:0}
+.org-cell .more{margin-top:12px;padding-top:10px;border-top:1px solid rgba(212,175,55,.18);
+  font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .org-cell .m span{display:block;font-size:.6rem;font-weight:500;letter-spacing:.1em;
   text-transform:uppercase;color:var(--w55);margin-top:3px}
 .org-note{text-align:center;margin-top:34px;font-size:.78rem;color:var(--w55);letter-spacing:.04em}
@@ -154,7 +158,8 @@ img{max-width:100%;display:block}
 .member .cm{font-size:.8rem;color:rgba(11,34,64,.6);margin-top:8px;line-height:1.5}
 .subhead{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold-deep);margin:0 0 18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.subhead + .grid{margin-bottom:46px}
+.subhead:not(:first-child){margin-top:46px}
+.submission{font-size:.94rem;line-height:1.7;color:rgba(11,34,64,.62);max-width:640px;margin:-6px 0 20px}
 
 /* ============ RECRUTEMENT ============ */
 .offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
@@ -266,9 +271,9 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
     <div class="rule"></div>
     <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
     <div class="statbar" id="stats">
-      <div class="s"><div class="num" data-count="0">0</div><div class="lbl">Élus au Bureau</div></div>
+      <div class="s"><div class="num" data-count="0">0</div><div class="lbl">Membres engagés</div></div>
       <div class="s"><div class="num" data-count="0">0</div><div class="lbl">Commissions</div></div>
-      <div class="s"><div class="num" data-count="0">0</div><div class="lbl">Postes à pourvoir</div></div>
+      <div class="s"><div class="num" data-count="0">0</div><div class="lbl">Annonces ouvertes</div></div>
     </div>
   </div>
 </section>
@@ -305,9 +310,8 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
     <div class="section-head reveal">
       <p class="eyebrow">Appel à candidatures</p>
       <h2>Les commissions recrutent leurs membres</h2>
-      <p>Un responsable ne fait pas une commission. Chaque pôle constitue maintenant son
-        équipe : ces annonces précisent ce que nous cherchons, poste par poste. Toute
-        promotion peut candidater — l'engagement compte plus que l'expérience.</p>
+      <p>Les pôles complètent leurs équipes. Voici les places encore à pourvoir,
+        commission par commission. Toutes les promotions peuvent candidater.</p>
     </div>
     <div class="offers" id="offres"></div>
 
@@ -320,9 +324,9 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
       </div>
       <div class="step">
         <div class="n">Étape 02</div>
-        <h4>Écrivez-nous</h4>
-        <p>Un message court suffit : nom, promotion, commission visée, et pourquoi vous.
-          Pas de CV exigé.</p>
+        <h4>Écrivez-nous sur WhatsApp</h4>
+        <p>Le bouton « Postuler » ouvre la discussion avec un message pré-rempli : nom,
+          promotion, commission visée. Pas de CV exigé.</p>
       </div>
       <div class="step">
         <div class="n">Étape 03</div>
@@ -333,8 +337,8 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
     </div>
 
     <div class="contact-cta reveal">
-      <a class="btn btn-navy" id="ctaMail" href="#">Candidater par e-mail</a>
-      <a class="btn btn-navy-line" id="ctaWa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      <a class="btn btn-navy" id="ctaWa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      <a class="btn btn-navy-line" id="ctaMail" href="#">Candidater par e-mail</a>
     </div>
   </div>
 </section>
@@ -372,8 +376,8 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
    1. CONTACT — à personnaliser
    ============================================================ */
 const CONTACT = {
-  mail : 'dagbokady@gmail.com',        // adresse qui reçoit les candidatures
-  wa   : '',                            // n° WhatsApp au format international, ex. '2250700000000'
+  wa   : '2250584904863',              // n° WhatsApp qui reçoit les candidatures
+  mail : 'dagbokady@gmail.com',        // adresse de secours (bouton e-mail)
   objet: 'Candidature — Commission A-LEX'
 };
 
@@ -393,22 +397,33 @@ const COMMISSIONS = [
   { id:'tresorerie', nom:'Trésorerie',
     mission:'Garantir une gestion transparente et rigoureuse des ressources de l\'association.',
     equipe:[ {fonction:'Trésorier Général', nom:'KONÉ Adams Ange'},
-             {fonction:'Trésorier Adjoint',  nom:'ATEBY Yannick'} ] },
+             {fonction:'Trésorier Adjoint',  nom:'ATEBY Yannick'} ],
+    membres:[ {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'},
+              {nom:'BONI Gil-André',        promo:'A-LEX 5'},
+              {nom:'HOUSSOU Delphine',      promo:'A-LEX 1'},
+              {nom:'BROU Ange',             promo:'A-LEX 2'},
+              {nom:'GOLLYS Emmanuel',       promo:'A-LEX 1'},
+              {nom:'COULIBALY Mariam',      promo:'A-LEX 3'} ] },
   { id:'digital', nom:'Digital &amp; Communication',
     mission:'Porter l\'image de marque d\'A-LEX, produire les contenus et les outils numériques de l\'association.',
     equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
-             {fonction:'Vice-Responsable', nom:'KANON Prince Elihu'} ] },
+             {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
+    membres:[ {nom:'KEITA Almamy'}, {nom:'DADIÉ Hanniel'},
+              {nom:'NAOUA Eden'},   {nom:'KONÉ Daouda'} ] },
   { id:'mentorat', nom:'Mentorat &amp; Carrière',
     mission:'Accompagner l\'insertion académique et professionnelle des membres et des élèves du LEAO.',
-    equipe:[ {fonction:'Responsable', nom:'AMA Érica'},
-             {fonction:'Vice-Responsable', nom:'KONÉ Isaac Hérèdè'} ] },
+    equipe:[ {fonction:'Responsable', nom:'AMA Érica Axelle-Nelly'},
+             {fonction:'Adjoint', nom:'KONÉ Mohamed Isaac Hérèdé'} ],
+    membres:[ {nom:'KODJO Ezoua Astrid Marie-Carmel'} ] },
   { id:'evenements', nom:'Événements &amp; Vie associative',
     mission:'Renforcer la cohésion entre les promotions par les rencontres, les cérémonies et les activités.',
     equipe:[ {fonction:'Responsable', nom:'DOUATI Dylane'},
-             {fonction:'Vice-Responsable', nom:'KOUAMÉ Melvyne'} ] },
-  { id:'controle', nom:'Contrôle fiscal &amp; administratif',
+             {fonction:'Adjointe', nom:'KOUAMÉ Melvyn'} ],
+    membres:[ {nom:'SANGARÉ Awa'}, {nom:'DOKUYO'}, {nom:'ALLA Yannick'} ] },
+  { id:'controle', nom:'Contrôle administratif',
     mission:'Veiller au respect des textes, à la bonne utilisation des ressources et à la transparence des décisions.',
-    equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'} ] },
+    equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'} ],
+    membres:[ {nom:'ESSEHIN Emyce'} ] },
 ];
 
 /* ============================================================
@@ -417,60 +432,14 @@ const COMMISSIONS = [
    `places` : nombre de postes ; `echeance` : texte libre
    ============================================================ */
 const OFFRES = [
-  { commission:'digital', titre:'Créateur de contenu &amp; monteur', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous filmez, vous montez, vous savez raconter une soirée en 40 secondes. Vous ferez vivre nos événements sur les réseaux.',
-    profil:['Maîtrise d\'un outil de montage (CapCut, Premiere, DaVinci…)',
-            'Un œil pour le cadrage et le rythme',
-            'Disponible lors des événements de l\'association'] },
-  { commission:'digital', titre:'Designer graphique', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Affiches, visuels de campagne, gabarits pour les réseaux : vous appliquez et faites vivre la charte A-LEX.',
-    profil:['Figma, Illustrator, Photoshop ou Canva à un bon niveau',
-            'Sens de la typographie et de la mise en page',
-            'Respect d\'une charte graphique existante'] },
-  { commission:'digital', titre:'Développeur web', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Le site, l\'annuaire des membres, les outils internes de gestion : vous construisez la plateforme d\'A-LEX.',
-    profil:['HTML/CSS/JS, ou un framework (React, Next, Vue…)',
-            'Notions de Git et de déploiement',
-            'Goût pour les outils simples et utiles'] },
-  { commission:'mentorat', titre:'Chargé de mentorat', places:3, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous mettez en relation les anciens et les plus jeunes, et suivez les binômes dans la durée.',
-    profil:['À l\'écoute, fiable dans le suivi',
-            'Bonne connaissance des filières post-bac',
-            'Au moins 2 h par semaine à consacrer au pôle'] },
-  { commission:'mentorat', titre:'Chargé des partenariats &amp; opportunités', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous démarchez entreprises et écoles, et diffusez stages, offres et bourses aux membres.',
-    profil:['Aisance à l\'écrit et au téléphone',
-            'Sens du réseau et de la relance',
-            'Rigueur dans le suivi des contacts'] },
-  { commission:'evenements', titre:'Chargé de logistique', places:3, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Salles, matériel, prestataires, timing : vous faites en sorte que le jour J se passe bien.',
-    profil:['Organisé, ponctuel, débrouillard',
-            'Disponible les week-ends d\'événement',
-            'Sang-froid sous pression'] },
-  { commission:'evenements', titre:'Chargé d\'animation &amp; vie associative', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous imaginez les activités qui font se rencontrer les promotions — sportives, culturelles, informelles.',
-    profil:['Force de proposition',
-            'À l\'aise avec les groupes',
-            'Connaît plusieurs promotions du LEAO'] },
-  { commission:'tresorerie', titre:'Assistant trésorerie', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous appuyez la trésorerie sur le suivi des cotisations et la tenue des pièces comptables.',
-    profil:['À l\'aise avec les chiffres et un tableur',
-            'Discrétion et intégrité absolues',
-            'Formation en comptabilité/gestion appréciée'] },
-  { commission:'controle', titre:'Membre du comité de contrôle', places:2, ouvert:true,
-    echeance:'Candidatures ouvertes',
-    desc:'Vous vérifiez la conformité des opérations aux statuts et au règlement intérieur, et rendez compte à l\'Assemblée.',
-    profil:['Impartialité, sans conflit d\'intérêts',
-            'Lecture attentive des textes de l\'association',
-            'Profil droit, audit ou gestion apprécié'] },
+  { commission:'tresorerie', titre:'Membre de la trésorerie', places:2, ouvert:true,
+    precision:'Dont au moins un membre de la promotion A-LEX 4.' },
+  { commission:'digital', titre:'Montage vidéo', places:1, ouvert:true },
+  { commission:'digital', titre:'Affiches', places:1, ouvert:true },
+  { commission:'digital', titre:'Couverture photo &amp; vidéo des événements', places:2, ouvert:true },
+  { commission:'controle', titre:'Membre du contrôle administratif', places:3, ouvert:true },
+  { commission:'evenements', titre:'Membre du pôle Événements', ouvert:true },
+  { commission:'mentorat', titre:'Membre du pôle Mentorat', ouvert:true },
 ];
 
 /* ============================================================
@@ -492,6 +461,7 @@ document.getElementById('org').innerHTML =
        <div class="org-col"><div class="org-cell">
          <div class="cm">${c.nom}</div>
          ${c.equipe.map(m=>`<div class="m">${m.nom}<span>${m.fonction}</span></div>`).join('')}
+         ${(c.membres||[]).length?`<div class="more">+ ${c.membres.length} membre${c.membres.length>1?'s':''}</div>`:''}
        </div></div>`).join('')}</div>
      <p class="org-note">Les commissions rendent compte au Bureau ; chacune constitue son équipe de membres.</p>`;
 
@@ -522,47 +492,52 @@ const card = (fonction,nom,com='') => `<article class="member reveal">
 
 document.getElementById('membres').innerHTML =
   `<p class="subhead reveal">Direction</p>
-   <div class="grid">${DIRECTION.map(d=>card(d.fonction,d.nom)).join('')}</div>
-   <p class="subhead reveal">Responsables de commissions</p>
-   <div class="grid">${COMMISSIONS.flatMap(c=>c.equipe.map(m=>card(m.fonction,m.nom,c.nom))).join('')}</div>`;
+   <div class="grid">${DIRECTION.map(d=>card(d.fonction,d.nom)).join('')}</div>`
+  + COMMISSIONS.map(c=>`
+   <p class="subhead reveal">${c.nom}</p>
+   <p class="submission reveal">${c.mission}</p>
+   <div class="grid">
+     ${c.equipe.map(m=>card(m.fonction,m.nom)).join('')}
+     ${(c.membres||[]).map(m=>card('Membre',m.nom,m.promo||'')).join('')}
+   </div>`).join('');
 
 /* --- Annonces de recrutement --- */
 const comName = id => (COMMISSIONS.find(c=>c.id===id)||{}).nom || '';
-const mailto = o => `mailto:${CONTACT.mail}?subject=${encodeURIComponent(
-  `${CONTACT.objet} — ${strip(o.titre)}`)}&body=${encodeURIComponent(
-  `Bonjour,\n\nJe souhaite rejoindre la commission ${strip(comName(o.commission))} au poste de « ${strip(o.titre)} ».\n\nNom & prénoms :\nPromotion (année de bac) :\nFormation / activité actuelle :\nPourquoi ce poste :\n\nCordialement,`)}`;
+const waLink = txt => `https://wa.me/${CONTACT.wa}?text=${encodeURIComponent(txt)}`;
+const waOffre = o => waLink(
+  `Bonjour, je souhaite rejoindre la commission ${strip(comName(o.commission))} d'A-LEX (${strip(o.titre)}).\n\nNom & prénoms :\nPromotion :`);
 
 document.getElementById('offres').innerHTML = OFFRES.map(o=>`
   <article class="offer reveal">
     <div class="top">
       <div class="cm">${comName(o.commission)}</div>
-      <span class="badge${o.ouvert?'':' closed'}">${o.ouvert?`${o.places} poste${o.places>1?'s':''}`:'Clôturé'}</span>
+      <span class="badge${o.ouvert?'':' closed'}">${
+        !o.ouvert ? 'Clôturé' : o.places ? `${o.places} place${o.places>1?'s':''}` : 'Ouvert'}</span>
     </div>
     <h3>${o.titre}</h3>
-    <p class="desc">${o.desc}</p>
-    <div class="lbl">Profil recherché</div>
-    <ul>${o.profil.map(p=>`<li>${CHECK}<span>${p}</span></li>`).join('')}</ul>
+    ${o.desc?`<p class="desc">${o.desc}</p>`:''}
+    ${o.profil&&o.profil.length?`<div class="lbl">Profil recherché</div>
+      <ul>${o.profil.map(p=>`<li>${CHECK}<span>${p}</span></li>`).join('')}</ul>`:''}
     <div class="foot">
-      <a class="btn btn-line btn-wide${o.ouvert?'':' disabled'}" href="${o.ouvert?mailto(o):'#'}">
-        ${o.ouvert?'Je candidate':'Candidatures closes'}</a>
-      <p class="meta">${o.echeance}</p>
+      <a class="btn btn-solid btn-wide${o.ouvert?'':' disabled'}" href="${o.ouvert?waOffre(o):'#'}"
+         target="_blank" rel="noopener">${o.ouvert?'Postuler':'Candidatures closes'}</a>
+      ${o.precision?`<p class="meta">${o.precision}</p>`:''}
     </div>
   </article>`).join('');
 
 /* --- Boutons de contact --- */
-const ctaMail = document.getElementById('ctaMail');
-ctaMail.href = `mailto:${CONTACT.mail}?subject=${encodeURIComponent(CONTACT.objet)}`;
-const ctaWa = document.getElementById('ctaWa');
-if(CONTACT.wa){ ctaWa.href = `https://wa.me/${CONTACT.wa}?text=${encodeURIComponent(CONTACT.objet)}`; }
-else { ctaWa.remove(); }
+document.getElementById('ctaWa').href = waLink(`Bonjour, ${CONTACT.objet}`);
+document.getElementById('ctaMail').href =
+  `mailto:${CONTACT.mail}?subject=${encodeURIComponent(CONTACT.objet)}`;
 
 /* --- Statistiques --- */
-const nbElus = DIRECTION.length + COMMISSIONS.reduce((n,c)=>n+c.equipe.length,0);
-const nbPostes = OFFRES.filter(o=>o.ouvert).reduce((n,o)=>n+o.places,0);
+const nbMembres = DIRECTION.length +
+  COMMISSIONS.reduce((n,c)=>n+c.equipe.length+(c.membres||[]).length,0);
+const nbAnnonces = OFFRES.filter(o=>o.ouvert).length;
 const nums = document.querySelectorAll('#stats .num');
-nums[0].dataset.count = nbElus;
+nums[0].dataset.count = nbMembres;
 nums[1].dataset.count = COMMISSIONS.length;
-nums[2].dataset.count = nbPostes;
+nums[2].dataset.count = nbAnnonces;
 
 /* --- Header, retour en haut, apparitions, compteurs --- */
 const header = document.querySelector('.site-header'), totop = document.getElementById('totop');
