@@ -183,6 +183,23 @@
         .btn-navy-line{background:transparent;color:var(--navy);border-color:rgba(11,34,64,.3)}
         .btn-navy-line:hover{border-color:var(--navy)}
 
+        /* ============ FORMULAIRE CONTACT ============ */
+        .qform{margin-top:8px;display:flex;flex-direction:column;gap:24px;max-width:760px}
+        .qf-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+        .qf-field{display:flex;flex-direction:column;gap:9px}
+        .qform label{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+        .qform input,.qform select,.qform textarea{
+            font:400 .96rem/1.5 var(--font);color:var(--ink);background:transparent;
+            border:none;border-bottom:1px solid rgba(11,34,64,.24);padding:10px 2px;
+            border-radius:0;outline:none;transition:border-color .2s;resize:vertical}
+        .qform input:focus,.qform select:focus,.qform textarea:focus{border-bottom-color:var(--gold-deep)}
+        .qform textarea{min-height:120px}
+        .qf-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:4px}
+        .qf-status{font-size:.86rem;line-height:1.5}
+        .qf-status.ok{color:#2f6d3f}
+        .qf-status.err{color:#a3372f}
+        .qform button:disabled{opacity:.6;cursor:default}
+
         /* ============ MISSIONS ============ */
         .mis{display:grid;grid-template-columns:minmax(240px,.85fr) 1.15fr;gap:10px 48px;
             padding:30px 2px;border-top:1px solid rgba(11,34,64,.28)}
@@ -272,7 +289,8 @@
             <a href="#organigramme">Organigramme</a>
             <a href="#bureau">Le Bureau</a>
             <a href="#missions">Missions</a>
-            <a href="#recrutement" class="cta">Nous rejoindre</a>
+            <a href="#recrutement">Nous rejoindre</a>
+            <a href="#contact-form" class="cta">Nous écrire</a>
         </nav>
     </div>
 </header>
@@ -367,6 +385,58 @@
             <a class="btn btn-navy" id="ctaWa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
             <a class="btn btn-navy-line" id="ctaMail" href="#">Candidater par e-mail</a>
         </div>
+    </div>
+</section>
+
+<!-- ============ QUESTIONS & SUGGESTIONS ============ -->
+<section class="band band-paper2" id="contact-form">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <p class="eyebrow">Questions &amp; suggestions</p>
+            <h2>Une question&nbsp;? Une idée à nous soumettre&nbsp;?</h2>
+            <p>Posez vos questions ou partagez vos suggestions et recommandations pour
+                l'association. Votre message nous parvient directement, sans que vous ayez
+                besoin d'ouvrir votre messagerie.</p>
+        </div>
+
+        <form class="qform reveal" id="qForm" novalidate>
+            <div class="qf-row">
+                <div class="qf-field">
+                    <label for="qNom">Nom &amp; prénoms *</label>
+                    <input type="text" id="qNom" name="nom" required autocomplete="name">
+                </div>
+                <div class="qf-field">
+                    <label for="qType">Type de message *</label>
+                    <select id="qType" name="type" required>
+                        <option value="" disabled selected>Choisissez…</option>
+                        <option value="Question">Question</option>
+                        <option value="Suggestion">Suggestion</option>
+                        <option value="Recommandation">Recommandation</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="qf-field">
+                <label for="qEmail">Votre e-mail (facultatif, pour qu'on puisse vous répondre)</label>
+                <input type="email" id="qEmail" name="email" autocomplete="email">
+            </div>
+
+            <div class="qf-field">
+                <label for="qMsg">Votre message *</label>
+                <textarea id="qMsg" name="message" rows="5" required></textarea>
+            </div>
+
+            <!-- Champs techniques pour FormSubmit.co -->
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="qf-actions">
+                <button type="submit" class="btn btn-navy" id="qSubmit">Envoyer</button>
+                <span class="qf-status" id="qStatus" role="status" aria-live="polite"></span>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -630,6 +700,62 @@
     document.getElementById('ctaWa').href = waLink(`Bonjour, ${CONTACT.objet}`);
     document.getElementById('ctaMail').href =
         `mailto:${CONTACT.mail}?subject=${encodeURIComponent(CONTACT.objet)}`;
+
+    /* ============================================================
+       4. FORMULAIRE « Questions & suggestions »
+       Service utilisé : FormSubmit.co (gratuit, sans inscription).
+       La 1ʳᵉ fois qu'un visiteur envoie le formulaire, FormSubmit adresse
+       un e-mail de confirmation à CONTACT.mail : il suffit d'ouvrir cet
+       e-mail UNE SEULE FOIS et de cliquer sur "Activate" (ou "Confirmer").
+       Ensuite, tous les messages suivants arrivent automatiquement dans
+       la boîte mail, sans aucune action ni ouverture de messagerie côté
+       visiteur.
+       ============================================================ */
+    const qForm   = document.getElementById('qForm');
+    const qStatus = document.getElementById('qStatus');
+    const qSubmit = document.getElementById('qSubmit');
+
+    qForm?.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if (qForm._honey.value) return; // piège à robots, ne rien envoyer
+
+        qStatus.textContent = '';
+        qStatus.className = 'qf-status';
+        qSubmit.disabled = true;
+        qSubmit.textContent = 'Envoi…';
+
+        const nom = qForm.nom.value.trim();
+        const type = qForm.type.value;
+
+        const payload = {
+            'Nom & prénoms': nom,
+            'Type de message': type,
+            'E-mail du visiteur': qForm.email.value.trim() || 'Non renseigné',
+            'Message': qForm.message.value.trim(),
+            _subject: `A-LEX — ${type || 'Message'} de ${nom}`,
+            _template: 'table',
+            _captcha: 'false',
+        };
+
+        try{
+            const res = await fetch(`https://formsubmit.co/ajax/${CONTACT.mail}`, {
+                method : 'POST',
+                headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+                body   : JSON.stringify(payload)
+            });
+            if(!res.ok) throw new Error('Réponse réseau invalide');
+
+            qStatus.textContent = 'Merci ! Votre message a bien été envoyé.';
+            qStatus.classList.add('ok');
+            qForm.reset();
+        }catch(err){
+            qStatus.textContent = "Une erreur est survenue. Réessayez, ou écrivez-nous sur WhatsApp.";
+            qStatus.classList.add('err');
+        }finally{
+            qSubmit.disabled = false;
+            qSubmit.textContent = 'Envoyer';
+        }
+    });
 
     /* --- Statistiques --- */
     const nbMembres = DIRECTION.length +
