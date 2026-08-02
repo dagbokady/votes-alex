@@ -37,7 +37,8 @@ votes-alex/
 │   ├── logo-alex.png        # Logo principal (navy) — fonds clairs
 │   ├── logo-alex-blanc.png  # Logo blanc + or — fonds navy
 │   ├── logo.png             # Ancien écusson (conservé)
-│   └── favicon-*.png
+│   └── favicon-*.png        # Monogramme « A » blanc + vague or sur navy
+│                            # (32 / 48 / 180 / 192 / 512 px), généré depuis le logo
 └── README.md
 ```
 
@@ -47,14 +48,14 @@ votes-alex/
 
 ```js
 const CONTACT = {
-  mail : 'dagbokady@gmail.com',   // adresse qui reçoit les candidatures
-  wa   : '',                       // n° WhatsApp international, ex. '2250700000000'
+  wa   : '2250584904863',         // n° WhatsApp qui reçoit les candidatures
+  mail : 'dagbokady@gmail.com',   // adresse de secours (bouton e-mail)
   objet: 'Candidature — Commission A-LEX'
 };
 ```
 
-Tant que `wa` est vide, le bouton WhatsApp n'est **pas affiché**. Les boutons
-« Je candidate » ouvrent un e-mail pré-rempli (poste, commission, champs à remplir).
+Chaque bouton « Postuler » ouvre `wa.me/<numéro>` avec un message pré-rempli
+(commission, poste, nom, promotion).
 
 ### 2. Le Bureau — `DIRECTION` et `COMMISSIONS`
 
@@ -65,8 +66,10 @@ Tant que `wa` est vide, le bouton WhatsApp n'est **pas affiché**. Les boutons
 { id:'digital',                        // identifiant utilisé par les annonces
   nom:'Digital &amp; Communication',
   mission:'…',
-  equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
-           {fonction:'Vice-Responsable', nom:'KANON Prince Elihu'} ] }
+  equipe :[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
+            {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
+  membres:[ {nom:'KEITA Almamy'},
+            {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'} ] }  // `promo` facultatif
 ```
 
 L'organigramme, la liste des membres et les statistiques du hero se recalculent
@@ -75,33 +78,36 @@ automatiquement à partir de ces deux tableaux.
 ### 3. Les annonces de recrutement — `OFFRES`
 
 ```js
-{ commission:'digital',        // doit correspondre à un `id` de COMMISSIONS
-  titre:'Développeur web',
-  places:2,                    // nombre de postes (affiché en badge)
-  ouvert:true,                 // false → annonce grisée « Candidatures closes »
-  echeance:'Candidatures ouvertes',
-  desc:'…',                    // 1–2 phrases
-  profil:['…','…','…'] }       // puces « Profil recherché »
+{ commission:'digital',      // doit correspondre à un `id` de COMMISSIONS
+  titre:'Montage vidéo',
+  places:1,                  // facultatif — sans `places`, le badge affiche « Ouvert »
+  ouvert:true,               // false → annonce grisée « Candidatures closes »
+  precision:'…',             // facultatif — ex. « Dont au moins un A-LEX 4 »
+  desc:'…',                  // facultatif
+  profil:['…','…'] }         // facultatif — bloc « Profil recherché » masqué si absent
 ```
+
+Seul `commission`, `titre` et `ouvert` sont obligatoires : **tant qu'une commission
+n'a pas donné de critères, on n'en invente pas** — la carte reste volontairement nue.
 
 Pour **fermer** une annonce : `ouvert:false`. Pour la retirer : supprimer l'entrée.
 
-## Résultat des élections (mandat en cours)
+## Composition du mandat en cours
 
-| Fonction | Élu(e) |
-|---|---|
-| Président | OUATTARA Nassir |
-| Vice-Président | TAPÉ Jo Marcel |
-| Secrétaire Général | DROH Michael Charles |
-| Trésorier Général | KONÉ Adams Ange |
-| Trésorier Adjoint | ATEBY Yannick |
-| Resp. Digital & Communication | DAGBO Christ-Phanuel |
-| Vice-Resp. Digital | KANON Prince Elihu |
-| Resp. Mentorat & Carrière | AMA Érica |
-| Vice-Resp. Mentorat & Carrière | KONÉ Isaac Hérèdè |
-| Resp. Événements & Vie associative | DOUATI Dylane |
-| Vice-Resp. Événements | KOUAMÉ Melvyne |
-| Resp. Contrôle fiscal & administratif | KOFFI Lyvan |
+**Direction** — Président : OUATTARA Nassir · Vice-Président : TAPÉ Jo Marcel ·
+Secrétaire Général : DROH Michael Charles.
+
+| Commission | Responsable / Adjoint | Membres |
+|---|---|---|
+| Trésorerie | KONÉ Adams Ange / ATEBY Yannick | KOUAKOU Allah Yannick (A-LEX 3), BONI Gil-André (A-LEX 5), HOUSSOU Delphine (A-LEX 1), BROU Ange (A-LEX 2), GOLLYS Emmanuel (A-LEX 1), COULIBALY Mariam (A-LEX 3) |
+| Digital & Communication | DAGBO Christ-Phanuel / KANON Prince | KEITA Almamy, DADIÉ Hanniel, NAOUA Eden, KONÉ Daouda |
+| Mentorat & Carrière | AMA Érica Axelle-Nelly / KONÉ Mohamed Isaac Hérèdé | KODJO Ezoua Astrid Marie-Carmel |
+| Événements & Vie associative | DOUATI Dylane / KOUAMÉ Melvyn | SANGARÉ Awa, DOKUYO, ALLA Yannick |
+| Contrôle administratif | KOFFI Lyvan | ESSEHIN Emyce |
+
+**Recrutements en cours** : Trésorerie 2 places (dont au moins un A-LEX 4) ·
+Contrôle administratif 3 places · Digital 1 montage vidéo, 1 affiches,
+2 couverture photo/vidéo · Événements et Mentorat ouverts (nombre non précisé).
 
 ## Parti pris graphique
 
