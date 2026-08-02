@@ -183,6 +183,22 @@ img{max-width:100%;display:block}
 .btn-navy-line{background:transparent;color:var(--navy);border-color:rgba(11,34,64,.3)}
 .btn-navy-line:hover{border-color:var(--navy)}
 
+/* ============ MISSIONS ============ */
+.mis{display:grid;grid-template-columns:minmax(240px,.85fr) 1.15fr;gap:10px 48px;
+  padding:30px 2px;border-top:1px solid rgba(11,34,64,.28)}
+.mis + .mis{border-top-color:var(--line)}
+.mis .cm{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+.mis h3{font-size:1.28rem;margin:10px 0 0}
+.mis .mi{margin-top:12px;font-size:.98rem;line-height:1.7;color:rgba(11,34,64,.68)}
+.mis .lbl{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(11,34,64,.42);margin-bottom:4px}
+.mis ul{margin:0;padding:0;list-style:none}
+.mis li{display:flex;gap:12px;font-size:.94rem;line-height:1.6;color:rgba(11,34,64,.78);
+  padding:9px 0;border-top:1px solid var(--line)}
+.mis li:first-of-type{border-top:0}
+.mis li svg{flex:0 0 auto;margin-top:5px}
+.mis .col2{min-width:0}
+
 /* ============ RÉSEAUX ============ */
 .social{margin:34px auto 0;display:flex;flex-wrap:wrap;justify-content:center;max-width:760px;
   border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
@@ -232,6 +248,7 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
   .row .fn{grid-column:1;grid-row:1}
   .row .nm{grid-column:1;grid-row:2}
   .row .pr{grid-column:2;grid-row:1 / span 2;align-self:center}
+  .mis{grid-template-columns:1fr;gap:22px}
   .org-branch{grid-template-columns:1fr;gap:16px;margin-top:26px}
   .org-branch::before{display:none}
   .org-col{padding-top:0}
@@ -254,6 +271,7 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
     <nav class="menu">
       <a href="#organigramme">Organigramme</a>
       <a href="#bureau">Le Bureau</a>
+      <a href="#missions">Missions</a>
       <a href="#recrutement" class="cta">Nous rejoindre</a>
     </nav>
   </div>
@@ -301,7 +319,20 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
 </section>
 
 <!-- ============ RECRUTEMENT ============ -->
-<section class="band band-paper2" id="recrutement">
+<!-- ============ MISSIONS DES COMMISSIONS ============ -->
+<section class="band band-paper2" id="missions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Rôles &amp; missions</p>
+      <h2>Ce que fait chaque commission</h2>
+      <p>Extrait du document officiel « Rôles &amp; missions » de l'association :
+        le mandat confié à chaque pôle et les responsabilités qui en découlent.</p>
+    </div>
+    <div id="missionsList"></div>
+  </div>
+</section>
+
+<section class="band band-paper" id="recrutement">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Appel à candidatures</p>
@@ -409,6 +440,13 @@ const DIRECTION = [
 const COMMISSIONS = [
   { id:'tresorerie', nom:'Trésorerie',
     mission:'Garantir une gestion transparente et rigoureuse des ressources de l\'association.',
+    roles:['Collecter les cotisations et contributions.',
+           'Tenir la comptabilité de l\'association.',
+           'Préparer le budget annuel.',
+           'Assurer le suivi des dépenses et des recettes.',
+           'Présenter les rapports financiers.',
+           'Veiller à la bonne utilisation des ressources.',
+           'Proposer des stratégies de mobilisation de fonds.'],
     equipe:[ {fonction:'Trésorier Général', nom:'KONÉ Adams Ange'},
              {fonction:'Trésorier Adjoint',  nom:'ATEBY Yannick'} ],
     membres:[ {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'},
@@ -419,22 +457,48 @@ const COMMISSIONS = [
               {nom:'COULIBALY Mariam',      promo:'A-LEX 3'} ] },
   { id:'digital', nom:'Digital &amp; Communication',
     mission:'Porter l\'image de marque d\'A-LEX, produire les contenus et les outils numériques de l\'association.',
+    roles:['Élaborer la stratégie de communication.',
+           'Gérer les réseaux sociaux et les plateformes numériques.',
+           'Concevoir les visuels, vidéos et supports de communication.',
+           'Couvrir les événements de l\'association.',
+           'Valoriser les réussites des membres.',
+           'Produire du contenu inspirant et informatif.',
+           'Maintenir une bibliothèque numérique (photos, vidéos, documents).',
+           'Concevoir les outils digitaux de gestion de l\'association.'],
     equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
              {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
     membres:[ {nom:'KEITA Almamy'}, {nom:'DADIÉ Hanniel'},
               {nom:'NAOUA Eden'},   {nom:'KONÉ Daouda'} ] },
   { id:'mentorat', nom:'Mentorat &amp; Carrière',
     mission:'Accompagner l\'insertion académique et professionnelle des membres et des élèves du LEAO.',
+    roles:['Mettre en place des programmes de mentorat.',
+           'Faciliter les échanges entre anciens et nouveaux diplômés.',
+           'Diffuser les opportunités de stages, d\'emploi et de formation.',
+           'Organiser des conférences métiers.',
+           'Accompagner les membres dans leur orientation professionnelle.',
+           'Développer le réseau professionnel A-LEX.'],
     equipe:[ {fonction:'Responsable', nom:'AMA Érica Axelle-Nelly'},
              {fonction:'Adjoint', nom:'KONÉ Mohamed Isaac Hérèdé'} ],
     membres:[ {nom:'KODJO Ezoua Astrid Marie-Carmel'} ] },
   { id:'evenements', nom:'Événements &amp; Vie associative',
     mission:'Renforcer la cohésion entre les promotions par les rencontres, les cérémonies et les activités.',
+    roles:['Organiser les rencontres annuelles.',
+           'Préparer les Assemblées Générales.',
+           'Organiser les conférences, galas et cérémonies.',
+           'Concevoir des activités sportives, culturelles et récréatives.',
+           'Assurer la logistique des événements.',
+           'Favoriser l\'intégration des nouvelles promotions.'],
     equipe:[ {fonction:'Responsable', nom:'DOUATI Dylane'},
              {fonction:'Adjointe', nom:'KOUAMÉ Melvyne'} ],
     membres:[ {nom:'SANGARÉ Awa'}, {nom:'DOKUYO'}, {nom:'ALLA Yannick'} ] },
   { id:'controle', nom:'Contrôle administratif',
     mission:'Veiller au respect des textes, à la bonne utilisation des ressources et à la transparence des décisions.',
+    roles:['Contrôler la régularité des opérations administratives et financières.',
+           'Veiller au respect des textes, statuts et règlements.',
+           'Prévenir les abus, fraudes et conflits d\'intérêts.',
+           'Vérifier la bonne utilisation des ressources de l\'association.',
+           'Garantir la transparence et l\'équité des décisions.',
+           'Rendre compte à l\'Assemblée et favoriser le dialogue.'],
     equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'},
              {fonction:'Adjoint', nom:'ESSEHIN Emyce'} ] },
 ];
@@ -509,6 +573,20 @@ document.getElementById('membres').innerHTML =
      ${c.equipe.map(m=>row(m.fonction,m.nom,'',true)).join('')}
      ${(c.membres||[]).map(m=>row('Membre',m.nom,m.promo||'')).join('')}
    </section>`).join('');
+
+/* --- Missions des commissions --- */
+document.getElementById('missionsList').innerHTML = COMMISSIONS.map((c,i)=>`
+  <article class="mis reveal">
+    <div>
+      <div class="cm">${String(i+1).padStart(2,'0')}</div>
+      <h3>${c.nom}</h3>
+      <p class="mi">${c.mission}</p>
+    </div>
+    <div class="col2">
+      <p class="lbl">Rôles &amp; responsabilités</p>
+      <ul>${(c.roles||[]).map(r=>`<li>${CHECK}<span>${r}</span></li>`).join('')}</ul>
+    </div>
+  </article>`).join('');
 
 /* --- Annonces de recrutement --- */
 const comName = id => (COMMISSIONS.find(c=>c.id===id)||{}).nom || '';

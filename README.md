@@ -75,11 +75,15 @@ dans le pied de page (icônes seules).
 { id:'digital',                        // identifiant utilisé par les annonces
   nom:'Digital &amp; Communication',
   mission:'…',
+  roles  :['…','…'],                   // « Rôles & responsabilités » (section Missions)
   equipe :[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
             {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
   membres:[ {nom:'KEITA Almamy'},
             {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'} ] }  // `promo` facultatif
 ```
+
+`mission` et `roles` alimentent la section **« Ce que fait chaque commission »**
+(contenu repris du document officiel *Rôles & missions*).
 
 L'organigramme, la liste des membres et les statistiques du hero se recalculent
 automatiquement à partir de ces deux tableaux.
