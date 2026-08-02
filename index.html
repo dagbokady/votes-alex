@@ -1,538 +1,541 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A-LEX — Le Bureau Exécutif &amp; les Commissions</title>
-<meta name="description" content="Le Bureau Exécutif d'A-LEX, élu par l'Assemblée : organigramme, membres, commissions — et les appels à candidature ouverts pour rejoindre les commissions.">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
-<link rel="shortcut icon" href="assets/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
-<meta name="theme-color" content="#0B2240">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   A-LEX — Bureau Exécutif & Commissions
-   Charte (BrandBoard) : Navy #0B2240 · Navy profond #031E35
-   Or #D4AF37 · Or foncé #A37F33 · Or clair #E8C86C
-   Papier #F4F4F6 · Papier 2 #E9E9EB — Police : Montserrat
-   ============================================================ */
-:root{
-  --navy:#0B2240;
-  --navy-deep:#031E35;
-  --navy-2:#12304F;
-  --gold:#D4AF37;
-  --gold-deep:#A37F33;
-  --gold-light:#E8C86C;
-  --paper:#F4F4F6;
-  --paper-2:#E9E9EB;
-  --white:#fff;
-  --ink:#0B2240;
-  --line:rgba(11,34,64,.14);
-  --line-navy:rgba(212,175,55,.22);
-  --w72:rgba(255,255,255,.74);
-  --w55:rgba(255,255,255,.55);
-  --r-chip:4px;
-  --maxw:1140px;
-  --font:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--paper);
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-h1,h2,h3,h4{font-weight:700;margin:0;line-height:1.14;letter-spacing:-.015em}
-p{margin:0}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.7rem;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 16px}
-.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.75}
-.on-navy .eyebrow{color:var(--gold)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-LEX — Le Bureau Exécutif &amp; les Commissions</title>
+    <meta name="description" content="Le Bureau Exécutif d'A-LEX, élu par l'Assemblée : organigramme, membres, commissions — et les appels à candidature ouverts pour rejoindre les commissions.">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+    <meta name="theme-color" content="#0B2240">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           A-LEX — Bureau Exécutif & Commissions
+           Charte (BrandBoard) : Navy #0B2240 · Navy profond #031E35
+           Or #D4AF37 · Or foncé #A37F33 · Or clair #E8C86C
+           Papier #F4F4F6 · Papier 2 #E9E9EB — Police : Montserrat
+           ============================================================ */
+        :root{
+            --navy:#0B2240;
+            --navy-deep:#031E35;
+            --navy-2:#12304F;
+            --gold:#D4AF37;
+            --gold-deep:#A37F33;
+            --gold-light:#E8C86C;
+            --paper:#F4F4F6;
+            --paper-2:#E9E9EB;
+            --white:#fff;
+            --ink:#0B2240;
+            --line:rgba(11,34,64,.14);
+            --line-navy:rgba(212,175,55,.22);
+            --w72:rgba(255,255,255,.74);
+            --w55:rgba(255,255,255,.55);
+            --r-chip:4px;
+            --maxw:1140px;
+            --font:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--paper);
+            -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+        h1,h2,h3,h4{font-weight:700;margin:0;line-height:1.14;letter-spacing:-.015em}
+        p{margin:0}
+        a{color:inherit}
+        img{max-width:100%;display:block}
+        .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+        .eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.7rem;
+            letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 16px}
+        .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.75}
+        .on-navy .eyebrow{color:var(--gold)}
 
-/* ============ HEADER ============ */
-.site-header{position:sticky;top:0;z-index:60;background:rgba(244,244,246,.92);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);transition:box-shadow .3s}
-.site-header.scrolled{box-shadow:0 10px 30px -22px rgba(11,34,64,.55)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
-.brand{display:flex;align-items:center;text-decoration:none}
-.brand img{height:40px;width:auto}
-.menu{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px)}
-.menu a{text-decoration:none;font-size:.72rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:rgba(11,34,64,.66);padding:6px 0;border-bottom:1px solid transparent;transition:.2s}
-.menu a:hover{color:var(--ink);border-bottom-color:var(--gold)}
-.menu a.cta{color:var(--navy);border-bottom-color:var(--gold)}
+        /* ============ HEADER ============ */
+        .site-header{position:sticky;top:0;z-index:60;background:rgba(244,244,246,.92);
+            backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+            border-bottom:1px solid var(--line);transition:box-shadow .3s}
+        .site-header.scrolled{box-shadow:0 10px 30px -22px rgba(11,34,64,.55)}
+        .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+        .brand{display:flex;align-items:center;text-decoration:none}
+        .brand img{height:40px;width:auto}
+        .menu{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px)}
+        .menu a{text-decoration:none;font-size:.72rem;font-weight:600;letter-spacing:.16em;
+            text-transform:uppercase;color:rgba(11,34,64,.66);padding:6px 0;border-bottom:1px solid transparent;transition:.2s}
+        .menu a:hover{color:var(--ink);border-bottom-color:var(--gold)}
+        .menu a.cta{color:var(--navy);border-bottom-color:var(--gold)}
 
-/* ============ HERO ============ */
-.hero{position:relative;color:#fff;overflow:hidden;background:var(--navy);
-  padding:clamp(60px,9vw,110px) 0 clamp(50px,7vw,86px)}
-.hero .wrap{position:relative;z-index:2;text-align:center}
-.hero-logo{width:min(330px,68vw);margin:0 auto 30px}
-.hero .kicker{display:inline-flex;align-items:center;gap:14px;font-size:.7rem;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
-.hero .kicker::before,.hero .kicker::after{content:"";width:30px;height:1px;background:currentColor;opacity:.65}
-.hero h1{font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.08}
-.hero h1 .gold{color:var(--gold)}
-.hero .lead{max-width:660px;margin:22px auto 0;font-size:clamp(1rem,2vw,1.12rem);color:var(--w72);line-height:1.7}
-.devise{font-style:italic;font-size:clamp(1rem,2.2vw,1.22rem);color:var(--gold-light);font-weight:500}
-.statbar{display:flex;max-width:620px;margin:44px auto 0;
-  border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
-.statbar .s{flex:1;text-align:center;padding:20px 8px}
-.statbar .s + .s{border-left:1px solid rgba(212,175,55,.18)}
-.statbar .num{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--gold);font-weight:700;line-height:1}
-.statbar .lbl{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--w55);margin-top:10px}
+        /* ============ HERO ============ */
+        .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy);
+            padding:clamp(60px,9vw,110px) 0 clamp(50px,7vw,86px)}
+        .hero .wrap{position:relative;z-index:2;text-align:center}
+        .hero-logo{width:min(330px,68vw);margin:0 auto 30px}
+        .hero .kicker{display:inline-flex;align-items:center;gap:14px;font-size:.7rem;letter-spacing:.24em;
+            text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
+        .hero .kicker::before,.hero .kicker::after{content:"";width:30px;height:1px;background:currentColor;opacity:.65}
+        .hero h1{font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.08}
+        .hero h1 .gold{color:var(--gold)}
+        .hero .lead{max-width:660px;margin:22px auto 0;font-size:clamp(1rem,2vw,1.12rem);color:var(--w72);line-height:1.7}
+        .devise{font-style:italic;font-size:clamp(1rem,2.2vw,1.22rem);color:var(--gold-light);font-weight:500}
+        .statbar{display:flex;max-width:620px;margin:44px auto 0;
+            border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
+        .statbar .s{flex:1;text-align:center;padding:20px 8px}
+        .statbar .s + .s{border-left:1px solid rgba(212,175,55,.18)}
+        .statbar .num{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--gold);font-weight:700;line-height:1}
+        .statbar .lbl{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--w55);margin-top:10px}
 
-/* ============ BANDES ============ */
-.band{padding:clamp(56px,8vw,100px) 0}
-.band-paper{background:var(--paper)}
-.band-paper2{background:var(--paper-2)}
-.band-navy{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.section-head{max-width:780px;margin-bottom:clamp(32px,5vw,56px)}
-.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.section-head h2{font-size:clamp(1.7rem,4vw,2.6rem);position:relative;padding-bottom:.5em}
-.section-head h2::after{content:"";position:absolute;left:0;bottom:0;width:54px;height:2px;background:var(--gold)}
-.section-head.center h2::after{left:50%;transform:translateX(-50%)}
-.on-navy .section-head h2{color:#fff}
-.section-head p{margin-top:18px;font-size:1.02rem;line-height:1.75;color:rgba(11,34,64,.7)}
-.on-navy .section-head p{color:var(--w72)}
+        /* ============ BANDES ============ */
+        .band{padding:clamp(56px,8vw,100px) 0}
+        .band-paper{background:var(--paper)}
+        .band-paper2{background:var(--paper-2)}
+        .band-navy{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+        .section-head{max-width:780px;margin-bottom:clamp(32px,5vw,56px)}
+        .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+        .section-head h2{font-size:clamp(1.7rem,4vw,2.6rem);position:relative;padding-bottom:.5em}
+        .section-head h2::after{content:"";position:absolute;left:0;bottom:0;width:54px;height:2px;background:var(--gold)}
+        .section-head.center h2::after{left:50%;transform:translateX(-50%)}
+        .on-navy .section-head h2{color:#fff}
+        .section-head p{margin-top:18px;font-size:1.02rem;line-height:1.75;color:rgba(11,34,64,.7)}
+        .on-navy .section-head p{color:var(--w72)}
 
-/* ============ ORGANIGRAMME ============ */
-.org{--node-w:300px}
-.org .tier{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
-.link-v{width:1px;height:34px;background:var(--line-navy);margin:0 auto}
-.org-node{width:var(--node-w);max-width:100%;padding:16px 20px;text-align:center;
-  border:1px solid rgba(212,175,55,.26);border-radius:2px;background:transparent}
-.org-node .fn{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.org-node .nm{font-size:1.08rem;font-weight:700;color:#fff;margin-top:7px;line-height:1.35}
-/* rangée des commissions + barre de liaison */
-.org-branch{position:relative;margin-top:34px;display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:20px}
-.org-branch::before{content:"";position:absolute;top:-34px;left:var(--bl,12%);right:var(--br,12%);
-  height:1px;background:var(--line-navy)}
-.org-branch.wrapped{margin-top:20px;gap:16px}
-.org-branch.wrapped::before,.org-branch.wrapped .org-col::before{display:none}
-.org-branch.wrapped .org-col{padding-top:0}
-.org-col{position:relative;padding-top:26px}
-.org-col::before{content:"";position:absolute;top:0;left:50%;width:1px;height:26px;background:var(--line-navy)}
-.org-cell{border-top:1px solid rgba(212,175,55,.3);padding:16px 2px 0;height:100%}
-.org-cell .cm{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:14px;line-height:1.5}
-.org-cell .m{font-size:.86rem;line-height:1.4;color:#fff;font-weight:600;margin-bottom:11px}
-.org-cell .m:last-child{margin-bottom:0}
-.org-cell .more{margin-top:14px;font-size:.72rem;color:var(--w55);font-style:italic}
-.org-cell .m span{display:block;font-size:.6rem;font-weight:500;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--w55);margin-top:3px}
-.org-note{text-align:center;margin-top:34px;font-size:.78rem;color:var(--w55);letter-spacing:.04em}
+        /* ============ ORGANIGRAMME ============ */
+        .org{--node-w:300px}
+        .org .tier{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+        .link-v{width:1px;height:34px;background:var(--line-navy);margin:0 auto}
+        .org-node{width:var(--node-w);max-width:100%;padding:16px 20px;text-align:center;
+            border:1px solid rgba(212,175,55,.26);border-radius:2px;background:transparent}
+        .org-node .fn{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+        .org-node .nm{font-size:1.08rem;font-weight:700;color:#fff;margin-top:7px;line-height:1.35}
+        /* rangée des commissions + barre de liaison */
+        .org-branch{position:relative;margin-top:34px;display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:20px}
+        .org-branch::before{content:"";position:absolute;top:-34px;left:var(--bl,12%);right:var(--br,12%);
+            height:1px;background:var(--line-navy)}
+        .org-branch.wrapped{margin-top:20px;gap:16px}
+        .org-branch.wrapped::before,.org-branch.wrapped .org-col::before{display:none}
+        .org-branch.wrapped .org-col{padding-top:0}
+        .org-col{position:relative;padding-top:26px}
+        .org-col::before{content:"";position:absolute;top:0;left:50%;width:1px;height:26px;background:var(--line-navy)}
+        .org-cell{border-top:1px solid rgba(212,175,55,.3);padding:16px 2px 0;height:100%}
+        .org-cell .cm{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+            color:var(--gold);margin-bottom:14px;line-height:1.5}
+        .org-cell .m{font-size:.86rem;line-height:1.4;color:#fff;font-weight:600;margin-bottom:11px}
+        .org-cell .m:last-child{margin-bottom:0}
+        .org-cell .more{margin-top:14px;font-size:.72rem;color:var(--w55);font-style:italic}
+        .org-cell .m span{display:block;font-size:.6rem;font-weight:500;letter-spacing:.1em;
+            text-transform:uppercase;color:var(--w55);margin-top:3px}
+        .org-note{text-align:center;margin-top:34px;font-size:.78rem;color:var(--w55);letter-spacing:.04em}
 
-/* ============ MEMBRES ============ */
-.roster{border-top:1px solid rgba(11,34,64,.28)}
-.roster + .roster{margin-top:clamp(38px,5vw,58px)}
-.roster .rh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:16px 0 14px}
-.roster .rh h3{font-size:1.12rem;letter-spacing:-.01em}
-.roster .rh .mi{font-size:.9rem;line-height:1.6;color:rgba(11,34,64,.6);flex:1 1 320px;min-width:0}
-.row{display:grid;grid-template-columns:200px 1fr auto;gap:8px 24px;align-items:baseline;
-  padding:13px 2px;border-top:1px solid var(--line)}
-.row .fn{font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
-.row .nm{font-size:1.02rem;font-weight:600}
-.row.lead .nm{font-weight:700}
-.row .pr{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,34,64,.45)}
+        /* ============ MEMBRES ============ */
+        .roster{border-top:1px solid rgba(11,34,64,.28)}
+        .roster + .roster{margin-top:clamp(38px,5vw,58px)}
+        .roster .rh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:16px 0 14px}
+        .roster .rh h3{font-size:1.12rem;letter-spacing:-.01em}
+        .roster .rh .mi{font-size:.9rem;line-height:1.6;color:rgba(11,34,64,.6);flex:1 1 320px;min-width:0}
+        .row{display:grid;grid-template-columns:200px 1fr auto;gap:8px 24px;align-items:baseline;
+            padding:13px 2px;border-top:1px solid var(--line)}
+        .row .fn{font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+        .row .nm{font-size:1.02rem;font-weight:600}
+        .row.lead .nm{font-weight:700}
+        .row .pr{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,34,64,.45)}
 
-/* ============ RECRUTEMENT ============ */
-.offers{border-top:1px solid rgba(11,34,64,.28)}
-.offer{display:grid;grid-template-columns:1fr auto;gap:6px 32px;align-items:start;
-  padding:24px 2px;border-bottom:1px solid var(--line);transition:background .2s}
-.offer:hover{background:rgba(11,34,64,.03)}
-.offer .cm{grid-column:1;font-size:.64rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--gold-deep)}
-.offer h3{grid-column:1;font-size:1.24rem;margin:8px 0 0}
-.offer .desc{grid-column:1;margin-top:10px;font-size:.94rem;line-height:1.7;
-  color:rgba(11,34,64,.65);max-width:56ch}
-.offer .lbl{grid-column:1;font-size:.62rem;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold-deep);margin:20px 0 10px}
-.offer ul{grid-column:1;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
-.offer li{display:flex;gap:11px;font-size:.92rem;line-height:1.6;color:rgba(11,34,64,.75)}
-.offer li svg{flex:0 0 auto;margin-top:5px}
-.offer .side{grid-column:2;grid-row:1 / span 4;text-align:right;
-  display:flex;flex-direction:column;align-items:flex-end;gap:16px}
-.badge{font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold-deep);white-space:nowrap;padding-top:2px}
-.badge.closed{color:rgba(11,34,64,.4)}
-.btn{display:inline-flex;align-items:center;justify-content:center;font:600 .78rem/1 var(--font);
-  letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;border-radius:var(--r-chip);
-  cursor:pointer;text-decoration:none;transition:background .2s,color .2s,border-color .2s;border:1px solid transparent}
-.btn-line{background:transparent;color:var(--gold);border-color:rgba(212,175,55,.5)}
-.btn-line:hover{border-color:var(--gold);background:rgba(212,175,55,.08)}
-.btn.disabled{pointer-events:none;opacity:.42}
-/* mode d'emploi candidature */
-.howto{margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);padding:30px 0;display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
-.howto .step .n{font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
-.howto .step h4{font-size:1rem;margin:10px 0 8px}
-.howto .step p{font-size:.9rem;line-height:1.65;color:rgba(11,34,64,.68)}
-.howto .step a{color:var(--gold-deep);text-decoration:none;border-bottom:1px solid rgba(163,127,51,.5)}
-.contact-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
-.btn-navy:hover{background:var(--navy-deep)}
-.btn-navy-line{background:transparent;color:var(--navy);border-color:rgba(11,34,64,.3)}
-.btn-navy-line:hover{border-color:var(--navy)}
+        /* ============ RECRUTEMENT ============ */
+        .offers{border-top:1px solid rgba(11,34,64,.28)}
+        .offer{display:grid;grid-template-columns:1fr auto;gap:6px 32px;align-items:start;
+            padding:24px 2px;border-bottom:1px solid var(--line);transition:background .2s}
+        .offer:hover{background:rgba(11,34,64,.03)}
+        .offer .cm{grid-column:1;font-size:.64rem;font-weight:600;letter-spacing:.16em;
+            text-transform:uppercase;color:var(--gold-deep)}
+        .offer h3{grid-column:1;font-size:1.24rem;margin:8px 0 0}
+        .offer .desc{grid-column:1;margin-top:10px;font-size:.94rem;line-height:1.7;
+            color:rgba(11,34,64,.65);max-width:56ch}
+        .offer .lbl{grid-column:1;font-size:.62rem;font-weight:600;letter-spacing:.18em;
+            text-transform:uppercase;color:var(--gold-deep);margin:20px 0 10px}
+        .offer ul{grid-column:1;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+        .offer li{display:flex;gap:11px;font-size:.92rem;line-height:1.6;color:rgba(11,34,64,.75)}
+        .offer li svg{flex:0 0 auto;margin-top:5px}
+        .offer .side{grid-column:2;grid-row:1 / span 4;text-align:right;
+            display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+        .badge{font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+            color:var(--gold-deep);white-space:nowrap;padding-top:2px}
+        .badge.closed{color:rgba(11,34,64,.4)}
+        .btn{display:inline-flex;align-items:center;justify-content:center;font:600 .78rem/1 var(--font);
+            letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;border-radius:var(--r-chip);
+            cursor:pointer;text-decoration:none;transition:background .2s,color .2s,border-color .2s;border:1px solid transparent}
+        .btn-line{background:transparent;color:var(--gold);border-color:rgba(212,175,55,.5)}
+        .btn-line:hover{border-color:var(--gold);background:rgba(212,175,55,.08)}
+        .btn.disabled{pointer-events:none;opacity:.42}
+        /* mode d'emploi candidature */
+        .howto{margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--line);
+            border-bottom:1px solid var(--line);padding:30px 0;display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+        .howto .step .n{font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+        .howto .step h4{font-size:1rem;margin:10px 0 8px}
+        .howto .step p{font-size:.9rem;line-height:1.65;color:rgba(11,34,64,.68)}
+        .howto .step a{color:var(--gold-deep);text-decoration:none;border-bottom:1px solid rgba(163,127,51,.5)}
+        .contact-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+        .btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+        .btn-navy:hover{background:var(--navy-deep)}
+        .btn-navy-line{background:transparent;color:var(--navy);border-color:rgba(11,34,64,.3)}
+        .btn-navy-line:hover{border-color:var(--navy)}
 
-/* ============ MISSIONS ============ */
-.mis{display:grid;grid-template-columns:minmax(240px,.85fr) 1.15fr;gap:10px 48px;
-  padding:30px 2px;border-top:1px solid rgba(11,34,64,.28)}
-.mis + .mis{border-top-color:var(--line)}
-.mis .cm{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
-.mis h3{font-size:1.28rem;margin:10px 0 0}
-.mis .mi{margin-top:12px;font-size:.98rem;line-height:1.7;color:rgba(11,34,64,.68)}
-.mis .lbl{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(11,34,64,.42);margin-bottom:4px}
-.mis ul{margin:0;padding:0;list-style:none}
-.mis li{display:flex;gap:12px;font-size:.94rem;line-height:1.6;color:rgba(11,34,64,.78);
-  padding:9px 0;border-top:1px solid var(--line)}
-.mis li:first-of-type{border-top:0}
-.mis li svg{flex:0 0 auto;margin-top:5px}
-.mis .col2{min-width:0}
+        /* ============ MISSIONS ============ */
+        .mis{display:grid;grid-template-columns:minmax(240px,.85fr) 1.15fr;gap:10px 48px;
+            padding:30px 2px;border-top:1px solid rgba(11,34,64,.28)}
+        .mis + .mis{border-top-color:var(--line)}
+        .mis .cm{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+        .mis h3{font-size:1.28rem;margin:10px 0 0}
+        .mis .mi{margin-top:12px;font-size:.98rem;line-height:1.7;color:rgba(11,34,64,.68)}
+        .mis .lbl{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+            color:rgba(11,34,64,.42);margin-bottom:4px}
+        .mis ul{margin:0;padding:0;list-style:none}
+        .mis li{display:flex;gap:12px;font-size:.94rem;line-height:1.6;color:rgba(11,34,64,.78);
+            padding:9px 0;border-top:1px solid var(--line)}
+        .mis li:first-of-type{border-top:0}
+        .mis li svg{flex:0 0 auto;margin-top:5px}
+        .mis .col2{min-width:0}
 
-/* ============ RÉSEAUX ============ */
-.social{margin:34px auto 0;display:flex;flex-wrap:wrap;justify-content:center;max-width:760px;
-  border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
-.social a{flex:1 1 170px;display:flex;align-items:center;justify-content:center;gap:11px;
-  padding:18px 14px;text-decoration:none;color:var(--gold);font-size:.68rem;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s}
-.social a + a{border-left:1px solid rgba(212,175,55,.18)}
-.social a:hover{background:rgba(212,175,55,.08);color:var(--gold-light)}
-.social svg{flex:0 0 auto}
-.foot-social{display:flex;gap:14px}
-.foot-social a{display:grid;place-items:center;width:36px;height:36px;border-radius:2px;
-  border:1px solid rgba(212,175,55,.3);color:var(--gold);transition:border-color .2s,background .2s}
-.foot-social a:hover{border-color:var(--gold);background:rgba(212,175,55,.08)}
+        /* ============ RÉSEAUX ============ */
+        .social{margin:34px auto 0;display:flex;flex-wrap:wrap;justify-content:center;max-width:760px;
+            border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
+        .social a{flex:1 1 170px;display:flex;align-items:center;justify-content:center;gap:11px;
+            padding:18px 14px;text-decoration:none;color:var(--gold);font-size:.68rem;font-weight:600;
+            letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s}
+        .social a + a{border-left:1px solid rgba(212,175,55,.18)}
+        .social a:hover{background:rgba(212,175,55,.08);color:var(--gold-light)}
+        .social svg{flex:0 0 auto}
+        .foot-social{display:flex;gap:14px}
+        .foot-social a{display:grid;place-items:center;width:36px;height:36px;border-radius:2px;
+            border:1px solid rgba(212,175,55,.3);color:var(--gold);transition:border-color .2s,background .2s}
+        .foot-social a:hover{border-color:var(--gold);background:rgba(212,175,55,.08)}
 
-/* ============ CLOSING / FOOTER ============ */
-.closing{text-align:center;position:relative;z-index:2}
-.closing img{width:min(260px,60vw);margin:0 auto 26px}
-.closing h2{font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--gold)}
-.closing p{max-width:580px;margin:20px auto 0;color:var(--w72);font-size:1.02rem;line-height:1.75}
-.closing .follow{margin-top:30px;font-size:.94rem;color:var(--w55);max-width:520px}
-.closing .devise{margin-top:34px}
-footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-top:1px solid rgba(212,175,55,.14)}
-.foot-inner{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
-.foot-inner img{height:44px}
-.foot-devise{font-style:italic;color:var(--gold-light);font-size:.9rem}
-.foot-bottom{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);
-  font-size:.76rem;text-align:center;line-height:1.7}
+        /* ============ CLOSING / FOOTER ============ */
+        .closing{text-align:center;position:relative;z-index:2}
+        .closing img{width:min(260px,60vw);margin:0 auto 26px}
+        .closing h2{font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--gold)}
+        .closing p{max-width:580px;margin:20px auto 0;color:var(--w72);font-size:1.02rem;line-height:1.75}
+        .closing .follow{margin-top:30px;font-size:.94rem;color:var(--w55);max-width:520px}
+        .closing .devise{margin-top:34px}
+        footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-top:1px solid rgba(212,175,55,.14)}
+        .foot-inner{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+        .foot-inner img{height:44px}
+        .foot-devise{font-style:italic;color:var(--gold-light);font-size:.9rem}
+        .foot-bottom{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);
+            font-size:.76rem;text-align:center;line-height:1.7}
 
-.totop{position:fixed;bottom:24px;right:24px;z-index:70;width:44px;height:44px;border-radius:2px;
-  background:var(--navy);border:1px solid rgba(212,175,55,.5);cursor:pointer;display:grid;place-items:center;
-  opacity:0;transform:translateY(14px);pointer-events:none;transition:.3s}
-.totop:hover{background:var(--navy-deep)}
-.totop.show{opacity:1;transform:none;pointer-events:auto}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
+        .totop{position:fixed;bottom:24px;right:24px;z-index:70;width:44px;height:44px;border-radius:2px;
+            background:var(--navy);border:1px solid rgba(212,175,55,.5);cursor:pointer;display:grid;place-items:center;
+            opacity:0;transform:translateY(14px);pointer-events:none;transition:.3s}
+        .totop:hover{background:var(--navy-deep)}
+        .totop.show{opacity:1;transform:none;pointer-events:auto}
+        .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+        .reveal.in{opacity:1;transform:none}
 
-@media (max-width:900px){
-  .org-branch::before{left:4%;right:4%}
-}
-@media (max-width:760px){
-  .menu a:not(.cta){display:none}
-  .nav{height:64px}
-  .offer{grid-template-columns:1fr;gap:0}
-  .offer .side{grid-column:1;grid-row:auto;text-align:left;align-items:flex-start;
-    flex-direction:row;justify-content:space-between;width:100%;margin-top:18px;align-items:center}
-  .row{grid-template-columns:1fr auto;gap:2px 16px}
-  .row .fn{grid-column:1;grid-row:1}
-  .row .nm{grid-column:1;grid-row:2}
-  .row .pr{grid-column:2;grid-row:1 / span 2;align-self:center}
-  .mis{grid-template-columns:1fr;gap:22px}
-  .org-branch{grid-template-columns:1fr;gap:16px;margin-top:26px}
-  .org-branch::before{display:none}
-  .org-col{padding-top:0}
-  .org-col::before{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none}
-}
-</style>
+        @media (max-width:900px){
+            .org-branch::before{left:4%;right:4%}
+        }
+        @media (max-width:760px){
+            .menu a:not(.cta){display:none}
+            .nav{height:64px}
+            .offer{grid-template-columns:1fr;gap:0}
+            .offer .side{grid-column:1;grid-row:auto;text-align:left;align-items:flex-start;
+                flex-direction:row;justify-content:space-between;width:100%;margin-top:18px;align-items:center}
+            .row{grid-template-columns:1fr auto;gap:2px 16px}
+            .row .fn{grid-column:1;grid-row:1}
+            .row .nm{grid-column:1;grid-row:2}
+            .row .pr{grid-column:2;grid-row:1 / span 2;align-self:center}
+            .mis{grid-template-columns:1fr;gap:22px}
+            .org-branch{grid-template-columns:1fr;gap:16px;margin-top:26px}
+            .org-branch::before{display:none}
+            .org-col{padding-top:0}
+            .org-col::before{display:none}
+        }
+        @media (prefers-reduced-motion:reduce){
+            *{animation:none!important;transition:none!important}
+            html{scroll-behavior:auto}
+            .reveal{opacity:1;transform:none}
+        }
+    </style>
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
-  <div class="wrap nav">
-    <a href="#top" class="brand"><img src="assets/logo-alex.png" alt="A-LEX"></a>
+    <div class="wrap nav">
+        <a href="#top" class="brand"><img src="assets/logo-alex.png" alt="A-LEX"></a>
 
-    <nav class="menu">
-      <a href="#organigramme">Organigramme</a>
-      <a href="#bureau">Le Bureau</a>
-      <a href="#missions">Missions</a>
-      <a href="#recrutement" class="cta">Nous rejoindre</a>
-    </nav>
-  </div>
+        <nav class="menu">
+            <a href="#organigramme">Organigramme</a>
+            <a href="#bureau">Le Bureau</a>
+            <a href="#missions">Missions</a>
+            <a href="#recrutement" class="cta">Nous rejoindre</a>
+        </nav>
+    </div>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap">
-    <img class="hero-logo" src="assets/logo-alex-blanc.png" alt="A-LEX">
-    <span class="kicker">Mandat 2026</span>
-    <h1>Le Bureau Exécutif <span class="gold">est constitué</span></h1>
-    <p class="lead">Les élections sont closes. L'Assemblée a désigné les responsables et
-      vice-responsables qui conduiront A-LEX pour ce mandat. Découvrez l'organigramme,
-      les visages du Bureau — et les commissions qui recrutent leurs membres.</p>
+    <div class="wrap">
+        <img class="hero-logo" src="assets/logo-alex-blanc.png" alt="A-LEX">
+        <span class="kicker">Mandat 2026</span>
+        <h1>Le Bureau Exécutif <span class="gold">est constitué</span></h1>
+        <p class="lead">Les élections sont closes. L'Assemblée a désigné les responsables et
+            vice-responsables qui conduiront A-LEX pour ce mandat. Découvrez l'organigramme,
+            les visages du Bureau — et les commissions qui recrutent leurs membres.</p>
 
-    <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
+        <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
 
-  </div>
+    </div>
 </section>
 
 <!-- ============ ORGANIGRAMME ============ -->
 <section class="band band-navy on-navy" id="organigramme">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <p class="eyebrow">Organisation</p>
-      <h2>L'organigramme d'A-LEX</h2>
-      <p>Une direction resserrée, des commissions autonomes. Le Bureau impulse et arbitre ;
-        les commissions exécutent sur le terrain, chacune dans son domaine.</p>
+    <div class="wrap">
+        <div class="section-head center reveal">
+            <p class="eyebrow">Organisation</p>
+            <h2>L'organigramme d'A-LEX</h2>
+            <p>Une direction resserrée, des commissions autonomes. Le Bureau impulse et arbitre ;
+                les commissions exécutent sur le terrain, chacune dans son domaine.</p>
+        </div>
+        <div class="org reveal" id="org"></div>
     </div>
-    <div class="org reveal" id="org"></div>
-  </div>
 </section>
 
 <!-- ============ LE BUREAU ============ -->
 <section class="band band-paper" id="bureau">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Le Bureau &amp; les équipes</p>
-      <h2>Celles et ceux qui portent le mandat</h2>
-      <p>La direction élue par l'Assemblée, puis la composition de chaque commission :
-        responsables, adjoints et membres.</p>
+    <div class="wrap">
+        <div class="section-head reveal">
+            <p class="eyebrow">Le Bureau &amp; les équipes</p>
+            <h2>Celles et ceux qui portent le mandat</h2>
+            <p>La direction élue par l'Assemblée, puis la composition de chaque commission :
+                responsables, adjoints et membres.</p>
+        </div>
+        <div id="membres"></div>
     </div>
-    <div id="membres"></div>
-  </div>
 </section>
 
 <!-- ============ RECRUTEMENT ============ -->
 <!-- ============ MISSIONS DES COMMISSIONS ============ -->
 <section class="band band-paper2" id="missions">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Rôles &amp; missions</p>
-      <h2>Ce que fait chaque commission</h2>
-      <p>Extrait du document officiel « Rôles &amp; missions » de l'association :
-        le mandat confié à chaque pôle et les responsabilités qui en découlent.</p>
+    <div class="wrap">
+        <div class="section-head reveal">
+            <p class="eyebrow">Rôles &amp; missions</p>
+            <h2>Ce que fait chaque commission</h2>
+            <p>Extrait du document officiel « Rôles &amp; missions » de l'association :
+                le mandat confié à chaque pôle et les responsabilités qui en découlent.</p>
+        </div>
+        <div id="missionsList"></div>
     </div>
-    <div id="missionsList"></div>
-  </div>
 </section>
 
 <section class="band band-paper" id="recrutement">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Appel à candidatures</p>
-      <h2>Les commissions recrutent leurs membres</h2>
-      <p>Les pôles complètent leurs équipes. Voici les places encore à pourvoir,
-        commission par commission. Toutes les promotions peuvent candidater.</p>
-    </div>
-    <div class="offers" id="offres"></div>
+    <div class="wrap">
+        <div class="section-head reveal">
+            <p class="eyebrow">Appel à candidatures</p>
+            <h2>Les commissions recrutent leurs membres</h2>
+            <p>Les pôles complètent leurs équipes. Voici les places encore à pourvoir,
+                commission par commission. Toutes les promotions peuvent candidater.</p>
+        </div>
+        <div class="offers" id="offres"></div>
 
-    <div class="howto reveal">
-      <div class="step">
-        <div class="n">Étape 01</div>
-        <h4>Choisissez votre commission</h4>
-        <p>Lisez les missions ci-dessus et retenez le pôle où votre temps et vos compétences
-          serviront le plus.</p>
-      </div>
-      <div class="step">
-        <div class="n">Étape 02</div>
-        <h4>Écrivez-nous sur WhatsApp</h4>
-        <p>Le bouton « Postuler » ouvre la discussion avec un message pré-rempli : nom,
-          promotion, commission visée. Pas de CV exigé.</p>
-      </div>
-      <div class="step">
-        <div class="n">Étape 03</div>
-        <h4>Échange &amp; intégration</h4>
-        <p>Le responsable de la commission vous rappelle, puis vous êtes ajouté au groupe de
-          travail du pôle.</p>
-      </div>
-    </div>
+        <div class="howto reveal">
+            <div class="step">
+                <div class="n">Étape 01</div>
+                <h4>Choisissez votre commission</h4>
+                <p>Lisez les missions ci-dessus et retenez le pôle où votre temps et vos compétences
+                    serviront le plus.</p>
+            </div>
+            <div class="step">
+                <div class="n">Étape 02</div>
+                <h4>Écrivez-nous sur WhatsApp</h4>
+                <p>Le bouton « Postuler » ouvre la discussion avec un message pré-rempli : nom,
+                    promotion, commission visée. Pas de CV exigé.</p>
+            </div>
+            <div class="step">
+                <div class="n">Étape 03</div>
+                <h4>Échange &amp; intégration</h4>
+                <p>Le responsable de la commission vous rappelle, puis vous êtes ajouté au groupe de
+                    travail du pôle.</p>
+            </div>
+        </div>
 
-    <div class="contact-cta reveal">
-      <a class="btn btn-navy" id="ctaWa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-      <a class="btn btn-navy-line" id="ctaMail" href="#">Candidater par e-mail</a>
+        <div class="contact-cta reveal">
+            <a class="btn btn-navy" id="ctaWa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+            <a class="btn btn-navy-line" id="ctaMail" href="#">Candidater par e-mail</a>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- ============ CLOSING ============ -->
 <section class="band band-navy on-navy closing">
-  <div class="wrap">
-    <img src="assets/logo-alex-blanc.png" alt="A-LEX">
-    <h2>Le mandat commence maintenant</h2>
-    <p>Merci à chaque membre qui a pris part au vote. Le Bureau est en
-      place&nbsp;; la suite s'écrit avec vous, dans les commissions.</p>
-    <p class="follow">Abonnez-vous à nos pages pour ne rien manquer des annonces,
-      des événements et des opportunités.</p>
-    <div class="social" id="social"></div>
-    <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
-  </div>
+    <div class="wrap">
+        <img src="assets/logo-alex-blanc.png" alt="A-LEX">
+        <h2>Le mandat commence maintenant</h2>
+        <p>Merci à chaque membre qui a pris part au vote. Le Bureau est en
+            place&nbsp;; la suite s'écrit avec vous, dans les commissions.</p>
+        <p class="follow">Abonnez-vous à nos pages pour ne rien manquer des annonces,
+            des événements et des opportunités.</p>
+        <div class="social" id="social"></div>
+        <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
+    </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap">
-    <div class="foot-inner">
-      <img src="assets/logo-alex-blanc.png" alt="A-LEX">
-      <p class="foot-devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
-      <div class="foot-social" id="footSocial"></div>
+    <div class="wrap">
+        <div class="foot-inner">
+            <img src="assets/logo-alex-blanc.png" alt="A-LEX">
+            <p class="foot-devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
+            <div class="foot-social" id="footSocial"></div>
+        </div>
+        <div class="foot-bottom">Association des Anciens Élèves du Lycée d'Excellence Alassane Ouattara de Grand-Bassam<br>
+            Rigueur · Discipline · Excellence · Fraternité · Solidarité</div>
     </div>
-    <div class="foot-bottom">Association des Anciens Élèves du Lycée d'Excellence Alassane Ouattara de Grand-Bassam<br>
-      Rigueur · Discipline · Excellence · Fraternité · Solidarité</div>
-  </div>
 </footer>
 
 <button class="totop" id="totop" aria-label="Haut de page">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
 <script>
-/* ============================================================
-   1. CONTACT — à personnaliser
-   ============================================================ */
-const CONTACT = {
-  wa   : '2250584904863',              // n° WhatsApp qui reçoit les candidatures
-  mail : 'dagbokady@gmail.com',        // adresse de secours (bouton e-mail)
-  objet: 'Candidature — Commission A-LEX'
-};
+    /* ============================================================
+       1. CONTACT — à personnaliser
+       ============================================================ */
+    const CONTACT = {
+        wa   : '2250584904863',              // n° WhatsApp par défaut (bouton général en bas de page)
+        mail : 'dagbokady@gmail.com',        // adresse de secours (bouton e-mail)
+        objet: 'Candidature — Commission A-LEX'
+    };
 
-/* ============================================================
-   1 bis. RÉSEAUX SOCIAUX — ordre d'affichage = ordre du tableau
-   ============================================================ */
-const SOCIAL = [
-  { nom:'Facebook',  url:'https://www.facebook.com/share/1BaW7qiGTz/?mibextid=wwXIfr',
-    ic:'<path d="M15 3h-2.4A3.6 3.6 0 0 0 9 6.6V9H6.6v3H9v9h3v-9h2.4l.6-3H12V6.8c0-.5.4-.8.9-.8H15V3Z"/>' },
-  { nom:'Instagram', url:'https://www.instagram.com/a_lex.community',
-    ic:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.4 6.7h.01"/>' },
-  { nom:'LinkedIn',  url:'https://www.linkedin.com/company/a-lex-anciens-du-lycée-d-excellence-alassane-ouattara',
-    ic:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17M7.5 7.2v.01M12 17v-4a2.4 2.4 0 0 1 4.8 0v4M12 10.5V17"/>' },
-  { nom:'Canal WhatsApp', url:'https://whatsapp.com/channel/0029Vb8Pmga7oQhjneF1Z23M',
-    ic:'<path d="M3.4 20.6 4.6 16.6A8.2 8.2 0 1 1 7.8 19.6l-4.4 1Z"/><path d="M9.1 8.6c.2 1 .7 1.9 1.4 2.6.7.7 1.6 1.2 2.6 1.4l.9-1.1 1.9.8-.4 1.5c-1.8.4-3.8-.4-5.3-1.9-1.5-1.5-2.3-3.5-1.9-5.3l1.5-.4.8 1.9-1.5.5Z"/>' },
-];
+    /* ============================================================
+       1 bis. RÉSEAUX SOCIAUX — ordre d'affichage = ordre du tableau
+       ============================================================ */
+    const SOCIAL = [
+        { nom:'Facebook',  url:'https://www.facebook.com/share/1BaW7qiGTz/?mibextid=wwXIfr',
+            ic:'<path d="M15 3h-2.4A3.6 3.6 0 0 0 9 6.6V9H6.6v3H9v9h3v-9h2.4l.6-3H12V6.8c0-.5.4-.8.9-.8H15V3Z"/>' },
+        { nom:'Instagram', url:'https://www.instagram.com/a_lex.community',
+            ic:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.4 6.7h.01"/>' },
+        { nom:'LinkedIn',  url:'https://www.linkedin.com/company/a-lex-anciens-du-lycée-d-excellence-alassane-ouattara',
+            ic:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17M7.5 7.2v.01M12 17v-4a2.4 2.4 0 0 1 4.8 0v4M12 10.5V17"/>' },
+        { nom:'Canal WhatsApp', url:'https://whatsapp.com/channel/0029Vb8Pmga7oQhjneF1Z23M',
+            ic:'<path d="M3.4 20.6 4.6 16.6A8.2 8.2 0 1 1 7.8 19.6l-4.4 1Z"/><path d="M9.1 8.6c.2 1 .7 1.9 1.4 2.6.7.7 1.6 1.2 2.6 1.4l.9-1.1 1.9.8-.4 1.5c-1.8.4-3.8-.4-5.3-1.9-1.5-1.5-2.3-3.5-1.9-5.3l1.5-.4.8 1.9-1.5.5Z"/>' },
+    ];
 
-/* ============================================================
-   2. LE BUREAU — résultats des élections
-   direction : niveau hiérarchique (président → vice → SG)
-   ============================================================ */
-const DIRECTION = [
-  { fonction:'Président',           nom:'OUATTARA Nassir' },
-  { fonction:'Vice-Président',      nom:'TAPÉ Jo Marcel' },
-  { fonction:'Secrétaire Général',  nom:'DROH Mickael Charles' },
-];
+    /* ============================================================
+       2. LE BUREAU — résultats des élections
+       direction : niveau hiérarchique (président → vice → SG)
+       ============================================================ */
+    const DIRECTION = [
+        { fonction:'Président',           nom:'OUATTARA Nassir' },
+        { fonction:'Vice-Président',      nom:'TAPÉ Jo Marcel' },
+        { fonction:'Secrétaire Général',  nom:'DROH Mickael Charles' },
+    ];
 
-/* Les commissions et leurs responsables élus.
-   `id` sert de lien avec les annonces de recrutement (section 3). */
-const COMMISSIONS = [
-  { id:'tresorerie', nom:'Trésorerie',
-    mission:'Garantir une gestion transparente et rigoureuse des ressources de l\'association.',
-    roles:['Collecter les cotisations et contributions.',
-           'Tenir la comptabilité de l\'association.',
-           'Préparer le budget annuel.',
-           'Assurer le suivi des dépenses et des recettes.',
-           'Présenter les rapports financiers.',
-           'Veiller à la bonne utilisation des ressources.',
-           'Proposer des stratégies de mobilisation de fonds.'],
-    equipe:[ {fonction:'Trésorier Général', nom:'KONÉ Adams Ange'},
-             {fonction:'Trésorier Adjoint',  nom:'ATEBY Yannick'} ],
-    membres:[ {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'},
-              {nom:'BONI Gil-André',        promo:'A-LEX 5'},
-              {nom:'HOUSSOU Delphine',      promo:'A-LEX 1'},
-              {nom:'BROU Ange',             promo:'A-LEX 2'},
-              {nom:'GOLLYS Emmanuel',       promo:'A-LEX 1'},
-              {nom:'COULIBALY Mariam',      promo:'A-LEX 3'} ] },
-  { id:'digital', nom:'Digital &amp; Communication',
-    mission:'Porter l\'image de marque d\'A-LEX, produire les contenus et les outils numériques de l\'association.',
-    roles:['Élaborer la stratégie de communication.',
-           'Gérer les réseaux sociaux et les plateformes numériques.',
-           'Concevoir les visuels, vidéos et supports de communication.',
-           'Couvrir les événements de l\'association.',
-           'Valoriser les réussites des membres.',
-           'Produire du contenu inspirant et informatif.',
-           'Maintenir une bibliothèque numérique (photos, vidéos, documents).',
-           'Concevoir les outils digitaux de gestion de l\'association.'],
-    equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
-             {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
-    membres:[ {nom:'KEITA Almamy'}, {nom:'DADIÉ Hanniel'},
-              {nom:'NAOUA Eden'},   {nom:'KONÉ Daouda'} ] },
-  { id:'mentorat', nom:'Mentorat &amp; Carrière',
-    mission:'Accompagner l\'insertion académique et professionnelle des membres et des élèves du LEAO.',
-    roles:['Mettre en place des programmes de mentorat.',
-           'Faciliter les échanges entre anciens et nouveaux diplômés.',
-           'Diffuser les opportunités de stages, d\'emploi et de formation.',
-           'Organiser des conférences métiers.',
-           'Accompagner les membres dans leur orientation professionnelle.',
-           'Développer le réseau professionnel A-LEX.'],
-    equipe:[ {fonction:'Responsable', nom:'AMA Érica Axelle-Nelly'},
-             {fonction:'Adjoint', nom:'KONÉ Mohamed Isaac Hérèdé'} ],
-    membres:[ {nom:'KODJO Ezoua Astrid Marie-Carmel'} ] },
-  { id:'evenements', nom:'Événements &amp; Vie associative',
-    mission:'Renforcer la cohésion entre les promotions par les rencontres, les cérémonies et les activités.',
-    roles:['Organiser les rencontres annuelles.',
-           'Préparer les Assemblées Générales.',
-           'Organiser les conférences, galas et cérémonies.',
-           'Concevoir des activités sportives, culturelles et récréatives.',
-           'Assurer la logistique des événements.',
-           'Favoriser l\'intégration des nouvelles promotions.'],
-    equipe:[ {fonction:'Responsable', nom:'DOUATI Dylane'},
-             {fonction:'Adjointe', nom:'KOUAMÉ Melvyne'} ],
-    membres:[ {nom:'SANGARÉ Awa'}, {nom:'DOKUYO'}, {nom:'ALLA Yannick'} ] },
-  { id:'controle', nom:'Contrôle administratif',
-    mission:'Veiller au respect des textes, à la bonne utilisation des ressources et à la transparence des décisions.',
-    roles:['Contrôler la régularité des opérations administratives et financières.',
-           'Veiller au respect des textes, statuts et règlements.',
-           'Prévenir les abus, fraudes et conflits d\'intérêts.',
-           'Vérifier la bonne utilisation des ressources de l\'association.',
-           'Garantir la transparence et l\'équité des décisions.',
-           'Rendre compte à l\'Assemblée et favoriser le dialogue.'],
-    equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'},
-             {fonction:'Adjoint', nom:'ESSEHIN Emyce'} ] },
-];
+    /* Les commissions et leurs responsables élus.
+       `id` sert de lien avec les annonces de recrutement (section 3).
+       `wa` : numéro WhatsApp propre à la commission (candidatures dirigées vers ce numéro). */
+    const COMMISSIONS = [
+        { id:'tresorerie', nom:'Trésorerie', wa:'33751045697',
+            mission:'Garantir une gestion transparente et rigoureuse des ressources de l\'association.',
+            roles:['Collecter les cotisations et contributions.',
+                'Tenir la comptabilité de l\'association.',
+                'Préparer le budget annuel.',
+                'Assurer le suivi des dépenses et des recettes.',
+                'Présenter les rapports financiers.',
+                'Veiller à la bonne utilisation des ressources.',
+                'Proposer des stratégies de mobilisation de fonds.'],
+            equipe:[ {fonction:'Trésorier Général', nom:'KONÉ Adams Ange'},
+                {fonction:'Trésorier Adjoint',  nom:'ATEBY Yannick'} ],
+            membres:[ {nom:'KOUAKOU Allah Yannick', promo:'A-LEX 3'},
+                {nom:'BONI Gil-André',        promo:'A-LEX 5'},
+                {nom:'HOUSSOU Delphine',      promo:'A-LEX 1'},
+                {nom:'BROU Ange',             promo:'A-LEX 2'},
+                {nom:'GOLLYS Emmanuel',       promo:'A-LEX 1'},
+                {nom:'COULIBALY Mariam',      promo:'A-LEX 3'} ] },
+        { id:'digital', nom:'Digital &amp; Communication', wa:'2250170158251',
+            mission:'Porter l\'image de marque d\'A-LEX, produire les contenus et les outils numériques de l\'association.',
+            roles:['Élaborer la stratégie de communication.',
+                'Gérer les réseaux sociaux et les plateformes numériques.',
+                'Concevoir les visuels, vidéos et supports de communication.',
+                'Couvrir les événements de l\'association.',
+                'Valoriser les réussites des membres.',
+                'Produire du contenu inspirant et informatif.',
+                'Maintenir une bibliothèque numérique (photos, vidéos, documents).',
+                'Concevoir les outils digitaux de gestion de l\'association.'],
+            equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
+                {fonction:'Vice-Responsable', nom:'KANON Prince'} ],
+            membres:[ {nom:'KEITA Almamy'}, {nom:'DADIÉ Hanniel'},
+                {nom:'NAOUA Eden'},   {nom:'KONÉ Daouda'} ] },
+        { id:'mentorat', nom:'Mentorat &amp; Carrière', wa:'212774976318',
+            mission:'Accompagner l\'insertion académique et professionnelle des membres et des élèves du LEAO.',
+            roles:['Mettre en place des programmes de mentorat.',
+                'Faciliter les échanges entre anciens et nouveaux diplômés.',
+                'Diffuser les opportunités de stages, d\'emploi et de formation.',
+                'Organiser des conférences métiers.',
+                'Accompagner les membres dans leur orientation professionnelle.',
+                'Développer le réseau professionnel A-LEX.'],
+            equipe:[ {fonction:'Responsable', nom:'AMA Érica Axelle-Nelly'},
+                {fonction:'Adjoint', nom:'KONÉ Mohamed Isaac Hérèdé'} ],
+            membres:[ {nom:'KODJO Ezoua Astrid Marie-Carmel'} ] },
+        { id:'evenements', nom:'Événements &amp; Vie associative', wa:'2250779445633',
+            mission:'Renforcer la cohésion entre les promotions par les rencontres, les cérémonies et les activités.',
+            roles:['Organiser les rencontres annuelles.',
+                'Préparer les Assemblées Générales.',
+                'Organiser les conférences, galas et cérémonies.',
+                'Concevoir des activités sportives, culturelles et récréatives.',
+                'Assurer la logistique des événements.',
+                'Favoriser l\'intégration des nouvelles promotions.'],
+            equipe:[ {fonction:'Responsable', nom:'DOUATI Dylane'},
+                {fonction:'Adjointe', nom:'KOUAMÉ Melvyne'} ],
+            membres:[ {nom:'SANGARÉ Awa'}, {nom:'DOKUYO'}, {nom:'ALLA Yannick'} ] },
+        { id:'controle', nom:'Contrôle administratif', wa:'2250709385851',
+            mission:'Veiller au respect des textes, à la bonne utilisation des ressources et à la transparence des décisions.',
+            roles:['Contrôler la régularité des opérations administratives et financières.',
+                'Veiller au respect des textes, statuts et règlements.',
+                'Prévenir les abus, fraudes et conflits d\'intérêts.',
+                'Vérifier la bonne utilisation des ressources de l\'association.',
+                'Garantir la transparence et l\'équité des décisions.',
+                'Rendre compte à l\'Assemblée et favoriser le dialogue.'],
+            equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'},
+                {fonction:'Adjoint', nom:'ESSEHIN Emyce'} ] },
+    ];
 
-/* ============================================================
-   3. RECRUTEMENT — annonces
-   Pour ouvrir/fermer une annonce : `ouvert: true | false`
-   `places` : nombre de postes ; `echeance` : texte libre
-   ============================================================ */
-const OFFRES = [
-  { commission:'tresorerie', titre:'Membre de la trésorerie', places:2, ouvert:true,
-    precision:'Dont au moins un membre de la promotion A-LEX 4.' },
-  { commission:'digital', titre:'Montage vidéo', places:1, ouvert:true },
-  { commission:'digital', titre:'Affiches', places:1, ouvert:true },
-  { commission:'digital', titre:'Couverture photo &amp; vidéo des événements', places:2, ouvert:true },
-  { commission:'controle', titre:'Membre du contrôle administratif', places:3, ouvert:true },
-  { commission:'evenements', titre:'Membre du pôle Événements', ouvert:true },
-  { commission:'mentorat', titre:'Membre du pôle Mentorat', ouvert:true },
-];
+    /* ============================================================
+       3. RECRUTEMENT — annonces
+       Pour ouvrir/fermer une annonce : `ouvert: true | false`
+       `places` : nombre de postes ; `echeance` : texte libre
+       ============================================================ */
+    const OFFRES = [
+        { commission:'tresorerie', titre:'Membre de la trésorerie', places:2, ouvert:true,
+            precision:'Dont au moins un membre de la promotion A-LEX 4.' },
+        { commission:'digital', titre:'Montage vidéo', places:1, ouvert:true },
+        { commission:'digital', titre:'Affiches', places:1, ouvert:true },
+        { commission:'digital', titre:'Couverture photo &amp; vidéo des événements', places:2, ouvert:true },
+        { commission:'digital', titre:'Reportrice', places:1, ouvert:true,
+            precision:'Poste ouvert aux candidatures féminines.' },
+        { commission:'controle', titre:'Membre du contrôle administratif', places:3, ouvert:true },
+        { commission:'evenements', titre:'Membre du pôle Événements', ouvert:true },
+        { commission:'mentorat', titre:'Membre du pôle Mentorat', ouvert:true },
+    ];
 
-/* ============================================================
-   RENDU
-   ============================================================ */
-const strip = s => s.replace(/&amp;/g,'&');
-const CHECK = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A37F33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+    /* ============================================================
+       RENDU
+       ============================================================ */
+    const strip = s => s.replace(/&amp;/g,'&');
+    const CHECK = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A37F33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 
-/* --- Organigramme --- */
-document.getElementById('org').innerHTML =
-  DIRECTION.map((d,i)=>`
+    /* --- Organigramme --- */
+    document.getElementById('org').innerHTML =
+        DIRECTION.map((d,i)=>`
     ${i?'<div class="link-v"></div>':''}
     <div class="tier"><div class="org-node lead">
       <div class="fn">${d.fonction}</div><div class="nm">${d.nom}</div>
     </div></div>`).join('')
-  + `<div class="link-v"></div>
+        + `<div class="link-v"></div>
      <div class="org-branch">${COMMISSIONS.map(c=>`
        <div class="org-col"><div class="org-cell">
          <div class="cm">${c.nom}</div>
@@ -541,41 +544,41 @@ document.getElementById('org').innerHTML =
        </div></div>`).join('')}</div>
      <p class="org-note">Les commissions rendent compte au Bureau ; chacune constitue son équipe de membres.</p>`;
 
-/* Aligne la barre de liaison sur les centres des colonnes ;
-   la masque si les commissions passent sur plusieurs lignes. */
-function orgLayout(){
-  const b = document.querySelector('.org-branch');
-  if(!b) return;
-  const cols = [...b.children];
-  b.classList.remove('wrapped');
-  const oneRow = cols.every(c=>c.offsetTop===cols[0].offsetTop);
-  if(!oneRow){ b.classList.add('wrapped'); return; }
-  const box=b.getBoundingClientRect(), f=cols[0].getBoundingClientRect(), l=cols.at(-1).getBoundingClientRect();
-  b.style.setProperty('--bl', (f.left + f.width/2 - box.left)+'px');
-  b.style.setProperty('--br', (box.right - l.right + l.width/2)+'px');
-}
-orgLayout();
-addEventListener('resize', orgLayout);
+    /* Aligne la barre de liaison sur les centres des colonnes ;
+       la masque si les commissions passent sur plusieurs lignes. */
+    function orgLayout(){
+        const b = document.querySelector('.org-branch');
+        if(!b) return;
+        const cols = [...b.children];
+        b.classList.remove('wrapped');
+        const oneRow = cols.every(c=>c.offsetTop===cols[0].offsetTop);
+        if(!oneRow){ b.classList.add('wrapped'); return; }
+        const box=b.getBoundingClientRect(), f=cols[0].getBoundingClientRect(), l=cols.at(-1).getBoundingClientRect();
+        b.style.setProperty('--bl', (f.left + f.width/2 - box.left)+'px');
+        b.style.setProperty('--br', (box.right - l.right + l.width/2)+'px');
+    }
+    orgLayout();
+    addEventListener('resize', orgLayout);
 
-/* --- Membres du Bureau --- */
-const row = (fonction,nom,promo='',lead=false) => `<div class="row${lead?' lead':''}">
+    /* --- Membres du Bureau --- */
+    const row = (fonction,nom,promo='',lead=false) => `<div class="row${lead?' lead':''}">
   <div class="fn">${fonction}</div><div class="nm">${nom}</div><div class="pr">${promo}</div></div>`;
 
-document.getElementById('membres').innerHTML =
-  `<section class="roster reveal">
+    document.getElementById('membres').innerHTML =
+        `<section class="roster reveal">
      <div class="rh"><h3>Direction</h3>
        <p class="mi">Elle impulse, arbitre et représente l'association.</p></div>
      ${DIRECTION.map(d=>row(d.fonction,d.nom,'',true)).join('')}
    </section>`
-  + COMMISSIONS.map(c=>`
+        + COMMISSIONS.map(c=>`
    <section class="roster reveal">
      <div class="rh"><h3>${c.nom}</h3><p class="mi">${c.mission}</p></div>
      ${c.equipe.map(m=>row(m.fonction,m.nom,'',true)).join('')}
      ${(c.membres||[]).map(m=>row('Membre',m.nom,m.promo||'')).join('')}
    </section>`).join('');
 
-/* --- Missions des commissions --- */
-document.getElementById('missionsList').innerHTML = COMMISSIONS.map((c,i)=>`
+    /* --- Missions des commissions --- */
+    document.getElementById('missionsList').innerHTML = COMMISSIONS.map((c,i)=>`
   <article class="mis reveal">
     <div>
       <div class="cm">${String(i+1).padStart(2,'0')}</div>
@@ -588,13 +591,15 @@ document.getElementById('missionsList').innerHTML = COMMISSIONS.map((c,i)=>`
     </div>
   </article>`).join('');
 
-/* --- Annonces de recrutement --- */
-const comName = id => (COMMISSIONS.find(c=>c.id===id)||{}).nom || '';
-const waLink = txt => `https://wa.me/${CONTACT.wa}?text=${encodeURIComponent(txt)}`;
-const waOffre = o => waLink(
-  `Bonjour, je souhaite rejoindre la commission ${strip(comName(o.commission))} d'A-LEX (${strip(o.titre)}).\n\nNom & prénoms :\nPromotion :`);
+    /* --- Annonces de recrutement --- */
+    const comName = id => (COMMISSIONS.find(c=>c.id===id)||{}).nom || '';
+    const comWa   = id => (COMMISSIONS.find(c=>c.id===id)||{}).wa || CONTACT.wa;
+    const waLink = (txt, num=CONTACT.wa) => `https://wa.me/${num}?text=${encodeURIComponent(txt)}`;
+    const waOffre = o => waLink(
+        `Bonjour, je souhaite rejoindre la commission ${strip(comName(o.commission))} d'A-LEX (${strip(o.titre)}).\n\nNom & prénoms :\nPromotion :`,
+        comWa(o.commission));
 
-document.getElementById('offres').innerHTML = OFFRES.map(o=>`
+    document.getElementById('offres').innerHTML = OFFRES.map(o=>`
   <article class="offer reveal">
     <div class="cm">${comName(o.commission)}</div>
     <h3>${o.titre}</h3>
@@ -610,53 +615,53 @@ document.getElementById('offres').innerHTML = OFFRES.map(o=>`
     </div>
   </article>`).join('');
 
-/* --- Réseaux sociaux --- */
-const socIcon = (s,size) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none"
+    /* --- Réseaux sociaux --- */
+    const socIcon = (s,size) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none"
   stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${s.ic}</svg>`;
 
-document.getElementById('social').innerHTML = SOCIAL.map(s=>
-  `<a href="${s.url}" target="_blank" rel="noopener">${socIcon(s,19)}<span>${s.nom}</span></a>`).join('');
+    document.getElementById('social').innerHTML = SOCIAL.map(s=>
+        `<a href="${s.url}" target="_blank" rel="noopener">${socIcon(s,19)}<span>${s.nom}</span></a>`).join('');
 
-document.getElementById('footSocial').innerHTML = SOCIAL.map(s=>
-  `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.nom}"
+    document.getElementById('footSocial').innerHTML = SOCIAL.map(s=>
+        `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.nom}"
       title="${s.nom}">${socIcon(s,17)}</a>`).join('');
 
-/* --- Boutons de contact --- */
-document.getElementById('ctaWa').href = waLink(`Bonjour, ${CONTACT.objet}`);
-document.getElementById('ctaMail').href =
-  `mailto:${CONTACT.mail}?subject=${encodeURIComponent(CONTACT.objet)}`;
+    /* --- Boutons de contact --- */
+    document.getElementById('ctaWa').href = waLink(`Bonjour, ${CONTACT.objet}`);
+    document.getElementById('ctaMail').href =
+        `mailto:${CONTACT.mail}?subject=${encodeURIComponent(CONTACT.objet)}`;
 
-/* --- Statistiques --- */
-const nbMembres = DIRECTION.length +
-  COMMISSIONS.reduce((n,c)=>n+c.equipe.length+(c.membres||[]).length,0);
-const nbAnnonces = OFFRES.filter(o=>o.ouvert).length;
-/* Le bloc de statistiques est optionnel : s'il est retiré du HTML, on n'échoue pas. */
-const nums = document.querySelectorAll('#stats .num');
-[nbMembres, COMMISSIONS.length, nbAnnonces].forEach((v,i)=>{ if(nums[i]) nums[i].dataset.count = v; });
+    /* --- Statistiques --- */
+    const nbMembres = DIRECTION.length +
+        COMMISSIONS.reduce((n,c)=>n+c.equipe.length+(c.membres||[]).length,0);
+    const nbAnnonces = OFFRES.filter(o=>o.ouvert).length;
+    /* Le bloc de statistiques est optionnel : s'il est retiré du HTML, on n'échoue pas. */
+    const nums = document.querySelectorAll('#stats .num');
+    [nbMembres, COMMISSIONS.length, nbAnnonces].forEach((v,i)=>{ if(nums[i]) nums[i].dataset.count = v; });
 
-/* --- Header, retour en haut, apparitions, compteurs --- */
-const header = document.querySelector('.site-header'), totop = document.getElementById('totop');
-addEventListener('scroll', ()=>{
-  header.classList.toggle('scrolled', scrollY>10);
-  totop.classList.toggle('show', scrollY>600);
-});
-totop.addEventListener('click', ()=>scrollTo({top:0,behavior:'smooth'}));
+    /* --- Header, retour en haut, apparitions, compteurs --- */
+    const header = document.querySelector('.site-header'), totop = document.getElementById('totop');
+    addEventListener('scroll', ()=>{
+        header.classList.toggle('scrolled', scrollY>10);
+        totop.classList.toggle('show', scrollY>600);
+    });
+    totop.addEventListener('click', ()=>scrollTo({top:0,behavior:'smooth'}));
 
-const io = new IntersectionObserver((en)=>{
-  en.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:.1, rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const io = new IntersectionObserver((en)=>{
+        en.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-const sio = new IntersectionObserver((en)=>{
-  en.forEach(e=>{
-    if(!e.isIntersecting) return;
-    const el=e.target, target=+el.dataset.count; let n=0;
-    const step=Math.max(1,Math.round(target/24));
-    const t=setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(t);} el.textContent=n; },32);
-    sio.unobserve(el);
-  });
-},{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>sio.observe(el));
+    const sio = new IntersectionObserver((en)=>{
+        en.forEach(e=>{
+            if(!e.isIntersecting) return;
+            const el=e.target, target=+el.dataset.count; let n=0;
+            const step=Math.max(1,Math.round(target/24));
+            const t=setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(t);} el.textContent=n; },32);
+            sio.unobserve(el);
+        });
+    },{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(el=>sio.observe(el));
 </script>
 </body>
 </html>
