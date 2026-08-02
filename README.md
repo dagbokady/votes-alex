@@ -1,12 +1,11 @@
-# A-LEX — Présentations des candidats
+# A-LEX — Le Bureau Exécutif & les Commissions
 
-Page web statique qui présente, **poste par poste**, les membres de l'association
-**A-LEX** (Association des Anciens Élèves du Lycée d'Excellence Alassane Ouattara
-de Grand-Bassam) qui se sont désignés pour un poste, ainsi que **leur lettre de
-motivation reproduite intégralement**.
+Page web statique qui présente le **Bureau Exécutif d'A-LEX** issu des élections
+(organigramme + membres élus) et publie les **appels à candidature** pour rejoindre
+les commissions.
 
-> Cette page **ne sert pas au vote ni au dépôt de candidature**. Elle met en
-> valeur les prises de parole des membres déjà désignés.
+> Les élections sont closes : cette page ne sert plus au vote ni à la présentation
+> des candidats. Les lettres de candidature restent dans l'historique Git.
 
 « Qui cultive la Rigueur et la Discipline cueille l'Excellence »
 
@@ -14,111 +13,101 @@ motivation reproduite intégralement**.
 
 ## Aperçu
 
-- **Un seul fichier** à ouvrir : [`index.html`](index.html) (HTML + CSS + JS, sans dépendance externe).
-- **Police** : Helvetica (Helvetica Neue → Helvetica → Arial en repli).
-- **Charte graphique A-LEX** reprise du support de présentation :
-  - Navy `#0D2841`, Or `#F1BA27`, Crème `#F7F2E4`.
-- **Responsive** (ordinateur, tablette, mobile), animations d'apparition au défilement,
-  compteurs animés, bouton « retour en haut ».
-- **Page simple, sans menu** : on fait défiler la page de haut en bas.
+- **Un seul fichier** à ouvrir : [`index.html`](index.html) (HTML + CSS + JS).
+- **Identité reprise du nouveau logo A-LEX** (BrandBoard) :
+  Navy `#0B2240` · Navy profond `#031E35` · Or `#D4AF37` · Or foncé `#A37F33` ·
+  Or clair `#E8C86C` · Papier `#F4F4F6` / `#E9E9EB`.
+- **Police Montserrat** (Google Fonts, repli Helvetica/Arial hors ligne).
+- **Responsive**, apparitions au défilement, compteurs, retour en haut.
 
 ## Lancer le site
 
-Aucune installation n'est nécessaire.
+```bash
+python3 -m http.server 4599
+```
 
-- **Le plus simple** : double-cliquer sur `index.html` pour l'ouvrir dans un navigateur.
-- **Avec un petit serveur local** (utile sur certains navigateurs) :
-  ```bash
-  cd Candidats
-  python3 -m http.server 4599
-  # puis ouvrir http://localhost:4599
-  ```
+puis ouvrir <http://localhost:4599>. (Un double-clic sur `index.html` fonctionne aussi.)
 
-## Structure du dossier
+## Structure
 
 ```
-Candidats/
-├── index.html          # La page (contenu, style et scripts)
+votes-alex/
+├── index.html               # La page (contenu, style, scripts)
 ├── assets/
-│   ├── logo.png        # Écusson A-LEX (fond détouré, transparent)
-│   └── favicon-*.png   # Favicon (écusson sur fond navy, plusieurs tailles)
-└── README.md           # Ce fichier
+│   ├── logo-alex.png        # Logo principal (navy) — fonds clairs
+│   ├── logo-alex-blanc.png  # Logo blanc + or — fonds navy
+│   ├── logo.png             # Ancien écusson (conservé)
+│   └── favicon-*.png
+└── README.md
 ```
 
-## Postes présentés
+## Ce qui se modifie (tout est en haut du `<script>`)
 
-Les postes et leurs missions/rôles proviennent du document officiel
-« Rôles & missions ». Les présentations reçues sont réparties ainsi :
-
-Noms et classes (TC1 / TC2 / TD = classe de terminale au LEAO) tels que sur le
-bulletin officiel :
-
-| Poste (bulletin)                        | Candidat(s) — classe |
-|-----------------------------------------|----------------------|
-| Président                               | Ouattara Ibrahim Nassir (TC1) |
-| Vice-Président                          | Tapé Jo Marcel Brito (TC1) |
-| Secrétaire Général                      | Droh Michael Charles (TD) |
-| Trésorier Général                       | Ateby Yannick (TD), Koné Adams (TD) |
-| Resp. Production Digitale & Communication | Dagbo Christ-Phanuel (TC2) |
-| Resp. Contrôle Fiscal & Administratif   | Koffi Mohaye Lyvan Ange (TC2) |
-| Resp. Commission Mentorat & Carrière    | Ama Erica (TD), Koné Isaac Hérèdé (TD), Adja Pierre Samuel (TD), Tanoh Aimé Sylvestre (TD) |
-| Resp. Commission Événements & Vie associative | Douati Dylane (TD) |
-
-> **À noter :**
-> - Les présentations d'**Ouattara Ibrahim Nassir** (Président) et de **Dagbo
->   Christ-Phanuel** (Communication) ont été **rédigées à leur demande** ; toutes les
->   autres lettres sont reproduites telles que leurs auteurs les ont écrites.
-> - **Tanoh Aimé Sylvestre** figure sur le bulletin parmi les candidats au poste de
->   Trésorier, mais sa lettre postule pour Mentorat & Carrière ; il est donc présenté
->   sous **Mentorat & Carrière** (choix validé).
-
-## Ajouter ou modifier une présentation
-
-Tout se passe dans le tableau `CANDIDATS`, dans le `<script>` en bas de `index.html`.
-Chaque entrée suit ce modèle :
+### 1. Contact des candidatures — `CONTACT`
 
 ```js
-{
-  poste: 'president',            // id du poste : president | secretaire | tresorier |
-                                 //   communication | gouvernance | mentorat | evenements
-  name: 'Prénom Nom',            // nom affiché
-  role: 'Président',             // libellé du rôle (badge)
-  formation: 'Diplôme — École',  // ligne « formation » (optionnelle)
-  letter: [                      // la lettre, paragraphe par paragraphe
-    `Premier paragraphe…`,
-    `Deuxième paragraphe…`,
-    // liste à puces (facultatif) :
-    { priorities: 'Mes priorités :', list: [ `Point 1`, `Point 2` ] },
-  ],
-  sign: 'PRÉNOM NOM',            // signature en bas de la lettre
-  // note: 'Texte optionnel en italique sous la signature.'
-}
+const CONTACT = {
+  mail : 'dagbokady@gmail.com',   // adresse qui reçoit les candidatures
+  wa   : '',                       // n° WhatsApp international, ex. '2250700000000'
+  objet: 'Candidature — Commission A-LEX'
+};
 ```
 
-Conseils :
+Tant que `wa` est vide, le bouton WhatsApp n'est **pas affiché**. Les boutons
+« Je candidate » ouvrent un e-mail pré-rempli (poste, commission, champs à remplir).
 
-- Écrivez chaque paragraphe entre **accents graves** ( `` ` `` ) : inutile d'échapper les apostrophes.
-- Pour **ne rien couper**, collez le texte tel quel, en séparant simplement les paragraphes.
-- Les statistiques du haut de page (nombre de présentations, de postes concernés)
-  se **recalculent automatiquement**.
+### 2. Le Bureau — `DIRECTION` et `COMMISSIONS`
 
-### Ajouter un nouveau poste
+`DIRECTION` = la chaîne hiérarchique de l'organigramme (Président → Vice-Président
+→ Secrétaire Général). `COMMISSIONS` = les pôles affichés en dessous :
 
-Ajoutez une entrée dans le tableau `POSTES` (id, `group`, `kind`, `icon`, `title`,
-`mission`, `roles`). Les icônes disponibles sont listées dans l'objet `ICONS`
-(`crown`, `doc`, `coins`, `mega`, `shield`, `grad`, `cal`).
+```js
+{ id:'digital',                        // identifiant utilisé par les annonces
+  nom:'Digital &amp; Communication',
+  mission:'…',
+  equipe:[ {fonction:'Responsable', nom:'DAGBO Christ-Phanuel'},
+           {fonction:'Vice-Responsable', nom:'KANON Prince Elihu'} ] }
+```
 
-## Personnalisation rapide
+L'organigramme, la liste des membres et les statistiques du hero se recalculent
+automatiquement à partir de ces deux tableaux.
 
-- **Couleurs / police** : variables CSS `:root` en haut de `index.html`
-  (`--navy`, `--gold`, `--cream`, `--font`).
-- **Textes d'introduction** : sections `.hero`, `#bureau`, `#commissions` et le
-  bloc de clôture.
+### 3. Les annonces de recrutement — `OFFRES`
 
-Le style suit un parti pris **éditorial** (filets fins plutôt que pilules colorées,
-encadrés « dossier », barre de statistiques, badges plats) pour un rendu soigné et
-« sur-mesure ». Ce système est documenté dans le skill Claude **`alex-brand`**
-(`~/.claude/skills/alex-brand/`), réutilisable pour tout futur support A-LEX.
+```js
+{ commission:'digital',        // doit correspondre à un `id` de COMMISSIONS
+  titre:'Développeur web',
+  places:2,                    // nombre de postes (affiché en badge)
+  ouvert:true,                 // false → annonce grisée « Candidatures closes »
+  echeance:'Candidatures ouvertes',
+  desc:'…',                    // 1–2 phrases
+  profil:['…','…','…'] }       // puces « Profil recherché »
+```
+
+Pour **fermer** une annonce : `ouvert:false`. Pour la retirer : supprimer l'entrée.
+
+## Résultat des élections (mandat en cours)
+
+| Fonction | Élu(e) |
+|---|---|
+| Président | OUATTARA Nassir |
+| Vice-Président | TAPÉ Jo Marcel |
+| Secrétaire Général | DROH Michael Charles |
+| Trésorier Général | KONÉ Adams Ange |
+| Trésorier Adjoint | ATEBY Yannick |
+| Resp. Digital & Communication | DAGBO Christ-Phanuel |
+| Vice-Resp. Digital | KANON Prince Elihu |
+| Resp. Mentorat & Carrière | AMA Érica |
+| Vice-Resp. Mentorat & Carrière | KONÉ Isaac Hérèdè |
+| Resp. Événements & Vie associative | DOUATI Dylane |
+| Vice-Resp. Événements | KOUAMÉ Melvyne |
+| Resp. Contrôle fiscal & administratif | KOFFI Lyvan |
+
+## Parti pris graphique
+
+Filets fins plutôt que pilules colorées, coins contenus (12 px cartes / 4 px puces),
+l'or en accent unique, alternance de bandes navy et papier. Ce système est documenté
+dans le skill Claude **`alex-brand`** (`~/.claude/skills/alex-brand/`).
 
 ---
 
