@@ -183,11 +183,27 @@ img{max-width:100%;display:block}
 .btn-navy-line{background:transparent;color:var(--navy);border-color:rgba(11,34,64,.3)}
 .btn-navy-line:hover{border-color:var(--navy)}
 
+/* ============ RÉSEAUX ============ */
+.social{margin:34px auto 0;display:flex;flex-wrap:wrap;justify-content:center;max-width:760px;
+  border-top:1px solid rgba(212,175,55,.28);border-bottom:1px solid rgba(212,175,55,.28)}
+.social a{flex:1 1 170px;display:flex;align-items:center;justify-content:center;gap:11px;
+  padding:18px 14px;text-decoration:none;color:var(--gold);font-size:.68rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s}
+.social a + a{border-left:1px solid rgba(212,175,55,.18)}
+.social a:hover{background:rgba(212,175,55,.08);color:var(--gold-light)}
+.social svg{flex:0 0 auto}
+.foot-social{display:flex;gap:14px}
+.foot-social a{display:grid;place-items:center;width:36px;height:36px;border-radius:2px;
+  border:1px solid rgba(212,175,55,.3);color:var(--gold);transition:border-color .2s,background .2s}
+.foot-social a:hover{border-color:var(--gold);background:rgba(212,175,55,.08)}
+
 /* ============ CLOSING / FOOTER ============ */
 .closing{text-align:center;position:relative;z-index:2}
 .closing img{width:min(260px,60vw);margin:0 auto 26px}
 .closing h2{font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--gold)}
 .closing p{max-width:580px;margin:20px auto 0;color:var(--w72);font-size:1.02rem;line-height:1.75}
+.closing .follow{margin-top:30px;font-size:.94rem;color:var(--w55);max-width:520px}
+.closing .devise{margin-top:34px}
 footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-top:1px solid rgba(212,175,55,.14)}
 .foot-inner{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
 .foot-inner img{height:44px}
@@ -327,9 +343,11 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
   <div class="wrap">
     <img src="assets/logo-alex-blanc.png" alt="A-LEX">
     <h2>Le mandat commence maintenant</h2>
-    <p>Merci à chaque membre qui a pris part au vote. Le Bureau est en place ; la suite
-      s'écrit avec vous, dans les commissions.</p>
-
+    <p>Merci à chaque membre qui a pris part au vote. Le Bureau est en
+      place&nbsp;; la suite s'écrit avec vous, dans les commissions.</p>
+    <p class="follow">Abonnez-vous à nos pages pour ne rien manquer des annonces,
+      des événements et des opportunités.</p>
+    <div class="social" id="social"></div>
     <p class="devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
   </div>
 </section>
@@ -340,6 +358,7 @@ footer{background:var(--navy-deep);color:var(--w55);padding:42px 0 26px;border-t
     <div class="foot-inner">
       <img src="assets/logo-alex-blanc.png" alt="A-LEX">
       <p class="foot-devise">« Qui cultive la Rigueur et la Discipline cueille l'Excellence »</p>
+      <div class="foot-social" id="footSocial"></div>
     </div>
     <div class="foot-bottom">Association des Anciens Élèves du Lycée d'Excellence Alassane Ouattara de Grand-Bassam<br>
       Rigueur · Discipline · Excellence · Fraternité · Solidarité</div>
@@ -359,6 +378,20 @@ const CONTACT = {
   mail : 'dagbokady@gmail.com',        // adresse de secours (bouton e-mail)
   objet: 'Candidature — Commission A-LEX'
 };
+
+/* ============================================================
+   1 bis. RÉSEAUX SOCIAUX — ordre d'affichage = ordre du tableau
+   ============================================================ */
+const SOCIAL = [
+  { nom:'Facebook',  url:'https://www.facebook.com/share/1BaW7qiGTz/?mibextid=wwXIfr',
+    ic:'<path d="M15 3h-2.4A3.6 3.6 0 0 0 9 6.6V9H6.6v3H9v9h3v-9h2.4l.6-3H12V6.8c0-.5.4-.8.9-.8H15V3Z"/>' },
+  { nom:'Instagram', url:'https://www.instagram.com/a_lex.community',
+    ic:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.4 6.7h.01"/>' },
+  { nom:'LinkedIn',  url:'https://www.linkedin.com/company/a-lex-anciens-du-lycée-d-excellence-alassane-ouattara',
+    ic:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17M7.5 7.2v.01M12 17v-4a2.4 2.4 0 0 1 4.8 0v4M12 10.5V17"/>' },
+  { nom:'Canal WhatsApp', url:'https://whatsapp.com/channel/0029Vb8Pmga7oQhjneF1Z23M',
+    ic:'<path d="M3.4 20.6 4.6 16.6A8.2 8.2 0 1 1 7.8 19.6l-4.4 1Z"/><path d="M9.1 8.6c.2 1 .7 1.9 1.4 2.6.7.7 1.6 1.2 2.6 1.4l.9-1.1 1.9.8-.4 1.5c-1.8.4-3.8-.4-5.3-1.9-1.5-1.5-2.3-3.5-1.9-5.3l1.5-.4.8 1.9-1.5.5Z"/>' },
+];
 
 /* ============================================================
    2. LE BUREAU — résultats des élections
@@ -397,12 +430,12 @@ const COMMISSIONS = [
   { id:'evenements', nom:'Événements &amp; Vie associative',
     mission:'Renforcer la cohésion entre les promotions par les rencontres, les cérémonies et les activités.',
     equipe:[ {fonction:'Responsable', nom:'DOUATI Dylane'},
-             {fonction:'Adjointe', nom:'KOUAMÉ Melvyn'} ],
+             {fonction:'Adjointe', nom:'KOUAMÉ Melvyne'} ],
     membres:[ {nom:'SANGARÉ Awa'}, {nom:'DOKUYO'}, {nom:'ALLA Yannick'} ] },
   { id:'controle', nom:'Contrôle administratif',
     mission:'Veiller au respect des textes, à la bonne utilisation des ressources et à la transparence des décisions.',
-    equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'} ],
-    membres:[ {nom:'ESSEHIN Emyce'} ] },
+    equipe:[ {fonction:'Responsable', nom:'KOFFI Lyvan'},
+             {fonction:'Adjoint', nom:'ESSEHIN Emyce'} ] },
 ];
 
 /* ============================================================
@@ -498,6 +531,17 @@ document.getElementById('offres').innerHTML = OFFRES.map(o=>`
     </div>
   </article>`).join('');
 
+/* --- Réseaux sociaux --- */
+const socIcon = (s,size) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${s.ic}</svg>`;
+
+document.getElementById('social').innerHTML = SOCIAL.map(s=>
+  `<a href="${s.url}" target="_blank" rel="noopener">${socIcon(s,19)}<span>${s.nom}</span></a>`).join('');
+
+document.getElementById('footSocial').innerHTML = SOCIAL.map(s=>
+  `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.nom}"
+      title="${s.nom}">${socIcon(s,17)}</a>`).join('');
+
 /* --- Boutons de contact --- */
 document.getElementById('ctaWa').href = waLink(`Bonjour, ${CONTACT.objet}`);
 document.getElementById('ctaMail').href =
@@ -507,10 +551,9 @@ document.getElementById('ctaMail').href =
 const nbMembres = DIRECTION.length +
   COMMISSIONS.reduce((n,c)=>n+c.equipe.length+(c.membres||[]).length,0);
 const nbAnnonces = OFFRES.filter(o=>o.ouvert).length;
+/* Le bloc de statistiques est optionnel : s'il est retiré du HTML, on n'échoue pas. */
 const nums = document.querySelectorAll('#stats .num');
-nums[0].dataset.count = nbMembres;
-nums[1].dataset.count = COMMISSIONS.length;
-nums[2].dataset.count = nbAnnonces;
+[nbMembres, COMMISSIONS.length, nbAnnonces].forEach((v,i)=>{ if(nums[i]) nums[i].dataset.count = v; });
 
 /* --- Header, retour en haut, apparitions, compteurs --- */
 const header = document.querySelector('.site-header'), totop = document.getElementById('totop');

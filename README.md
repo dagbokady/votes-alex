@@ -57,6 +57,15 @@ const CONTACT = {
 Chaque bouton « Postuler » ouvre `wa.me/<numéro>` avec un message pré-rempli
 (commission, poste, nom, promotion).
 
+### 1 bis. Les réseaux sociaux — `SOCIAL`
+
+```js
+{ nom:'Facebook', url:'https://…', ic:'<path d="…"/>' }   // `ic` = tracé SVG 24×24
+```
+
+L'ordre du tableau est celui affiché dans la section de clôture (avec libellé) et
+dans le pied de page (icônes seules).
+
 ### 2. Le Bureau — `DIRECTION` et `COMMISSIONS`
 
 `DIRECTION` = la chaîne hiérarchique de l'organigramme (Président → Vice-Président
@@ -102,8 +111,8 @@ Secrétaire Général : DROH Michael Charles.
 | Trésorerie | KONÉ Adams Ange / ATEBY Yannick | KOUAKOU Allah Yannick (A-LEX 3), BONI Gil-André (A-LEX 5), HOUSSOU Delphine (A-LEX 1), BROU Ange (A-LEX 2), GOLLYS Emmanuel (A-LEX 1), COULIBALY Mariam (A-LEX 3) |
 | Digital & Communication | DAGBO Christ-Phanuel / KANON Prince | KEITA Almamy, DADIÉ Hanniel, NAOUA Eden, KONÉ Daouda |
 | Mentorat & Carrière | AMA Érica Axelle-Nelly / KONÉ Mohamed Isaac Hérèdé | KODJO Ezoua Astrid Marie-Carmel |
-| Événements & Vie associative | DOUATI Dylane / KOUAMÉ Melvyn | SANGARÉ Awa, DOKUYO, ALLA Yannick |
-| Contrôle administratif | KOFFI Lyvan | ESSEHIN Emyce |
+| Événements & Vie associative | DOUATI Dylane / KOUAMÉ Melvyne | SANGARÉ Awa, DOKUYO, ALLA Yannick |
+| Contrôle administratif | KOFFI Lyvan / ESSEHIN Emyce | — |
 
 **Recrutements en cours** : Trésorerie 2 places (dont au moins un A-LEX 4) ·
 Contrôle administratif 3 places · Digital 1 montage vidéo, 1 affiches,
